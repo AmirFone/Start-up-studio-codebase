@@ -1,8 +1,21 @@
 // src/pages/form.js
 import React from 'react';
 import Head from 'next/head';
-
+import { useRouter } from 'next/router'; // Import useRouter hook from Next.js
 export default function Form() {
+  const router = useRouter(); // Initialize the router
+
+  // Function to handle form submission
+  const handleSubmit = async (event) => {
+    event.preventDefault(); // Prevent the default form submission behavior
+
+    // Here you would typically send the form data to your server
+    // For demonstration, we'll just log to the console
+    console.log('Form submitted!');
+
+    // Redirect to the dashboard page after form submission
+    router.push('/dashboard');
+  };
   return (
     <div className="min-h-screen bg-gray-100 flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl w-full space-y-8 bg-white p-10 rounded-lg shadow-lg">
@@ -12,7 +25,7 @@ export default function Form() {
 
         <h1 className="text-4xl font-bold text-center mb-10">Medical Information Form</h1>
         
-        <form className="space-y-6">
+        <form className="space-y-6" onSubmit={handleSubmit}>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* Personal Information Section */}
             <div className="md:col-span-2">
