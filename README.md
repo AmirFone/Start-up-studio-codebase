@@ -1,6 +1,4 @@
 
-
-```markdown
 # Centralized Health Management Platform
 
 ## About The Project
@@ -82,5 +80,3 @@ Project Link: [https://github.com/AmirFone/Start-up-studio-codebase.git](https:/
 - [React Icons](https://react-icons.github.io/react-icons/search)
 - [Heroicons](https://heroicons.com/)
 - [Next.js Docs](https://nextjs.org/docs)
-
-```
