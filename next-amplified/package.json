@@ -1,0 +1,30 @@
+{
+  "name": "next-amplified",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@aws-amplify/adapter-nextjs": "^0.0.2-next.a1ea0f2.0",
+    "@aws-amplify/ui-react": "^6.1.4",
+    "@aws-crypto/sha256-js": "^5.2.0",
+    "@fullcalendar/daygrid": "^6.1.11",
+    "@fullcalendar/react": "^6.1.11",
+    "@heroicons/react": "^1.0.6",
+    "aws-amplify": "^6.0.1-next.a1ea0f2.0",
+    "next": "^13.4.0",
+    "react": "^18",
+    "react-dom": "^18"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.0.1",
+    "eslint": "^8",
+    "eslint-config-next": "14.1.0",
+    "postcss": "^8",
+    "tailwindcss": "^3.3.0"
+  }
+}

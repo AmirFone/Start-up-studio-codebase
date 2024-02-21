@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: #0E1831;  /* Firefly */
+  --background-start-rgb: #4C5E65;  /* River Bed */
+  --background-end-rgb: #7C8EDE;  /* Chetwode Blue */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: #E0E6F3;  /* Lilac */
+    --background-start-rgb: #4C5E65;  /* River Bed */
+    --background-end-rgb: #0E1831;  /* Firefly */
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      rgb(var(--background-end-rgb)) 0%,
+      rgb(var(--background-start-rgb)) 100%
+    );
+  box-shadow: inset 0 0 0 20px rgba(var(--foreground-rgb), 0.05);
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+/* .my-modal .modal-overlay { 
+  overflow-auto;
+} */
+
+.my-modal .modal-content {
+  max-width: 500px; 
+  margin: 20px auto;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+.feature-card:hover {
+  background-color: rgb(var(--background-end-rgb)); /* Slightly lightens on hover */
+  transform: translateY(-4px); /* Subtle lift */
+  box-shadow: 0 10px 15px  rgba(0, 0, 0, 0.3); /* More pronounced shadow */
+}
+.feature-card {
+  transition: all 0.2s ease-in-out; /* Example transition */
+}
+
+.how-we-help {
+  background-color: #0E1831; /* Your Firefly color */
+  color: white; /* Ensure good text contrast */
+  padding: 4rem 2rem; /* More spacious padding than the default */
+  border-radius: 8px; /* Adds a subtle curve to the section */
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1); /* Gentle shadow for depth */
+  text-align: center; /* Centers content of the entire section */
+}
+
+.grid.grid-cols-1 .FeatureBlock {
+  margin: 0 auto; /* Center FeatureBlocks on smaller screens */
+}
+
+.FeatureBlock {
+   text-align: left; /* Left-align text within each block */
+   max-width: 300px;  /* Prevent blocks from stretching too wide */
+   margin: 0 auto 1rem auto;  /* Adds consistent spacing between blocks */
+}
+.how-we-help .text-center { /* Target the heading and subheading container */
+  text-align: left; /* Left-align for better hierarchy */
+  max-width: 600px; /* Limit width for readability on large screens */
+  margin: 0 auto;   /* Keep it horizontally centered */
+} 
+
+
+.FeatureBlock h3 {  /* Target the  title specifically */
+  background-color: var(--background-start-rgb); /* Slightly darker background */
+  color: white;
+  padding: 8px 12px;  /* Some padding */
+  border-radius: 10px; /* Softened corners */
+  margin-bottom: 8px; /* Space between title and description */
+}
+.feature-grid-container { 
+  background-color: #7c8eb4;  /* Your desired background color */ 
+  color: rgb(255, 255, 255);              /* Ensure good text contrast */
+  padding: 2rem;  
+  border-radius: 8px; 
+  margin-top: 2rem; 
+  box-shadow:  0 2px 5px rgba(213, 205, 205, 0.1); /* Subtle shadow for depth */
+}
+.feature-icon {
+  width: 120px;  
+  height: 120px; 
+}
