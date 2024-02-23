@@ -1,5 +1,4 @@
 "use client";
-
 import React, { useState, useEffect } from "react";
 import { XIcon, SearchIcon } from "@heroicons/react/outline";
 import Head from "next/head";
@@ -7,12 +6,11 @@ import { useRouter } from "next/router";
 import { Hub } from "aws-amplify/utils";
 import { signInWithRedirect, getCurrentUser } from "aws-amplify/auth";
 import { Amplify } from "aws-amplify";
-import { signIn, signUp } from 'aws-amplify/auth';
+import { signIn, signUp } from "aws-amplify/auth";
 import awsconfig from "../src/aws-exports";
 import doctorSVG from "../public/doctor.svg";
 import syncSVG from "../public/sync.svg";
 import bookSVG from "../public/book.svg";
-
 Amplify.configure(awsconfig);
 
 // Icon mapping for clarity
@@ -23,13 +21,18 @@ const iconMap = {
 };
 
 export default function Home() {
+  const { user, setUser } = useContext(AuthContext);
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const [isEmailVerificationRequired, setIsEmailVerificationRequired] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const router = useRouter();
 
   const handleEmailVerificationSubmit = async (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-    const code = data.get('verificationCode'); // Assuming 'verificationCode' is the name attribute in your form
-    await handleEmailConfirmation({ username:"fnkqewfjwe", code });
+    const code = data.get("verificationCode"); // Assuming 'verificationCode' is the name attribute in your form
+    await handleEmailConfirmation({ username: "fnkqewfjwe", code });
   };
 
   async function handleEmailConfirmation({ username, code }) {
@@ -41,8 +44,7 @@ export default function Home() {
       console.error("Error confirming sign up", error);
     }
   }
-  
-  
+
   Hub.listen("auth", async ({ payload }) => {
     switch (payload.event) {
       case "signInWithRedirect":
@@ -84,13 +86,15 @@ export default function Home() {
     checkUser();
   }, []);
 
-  const handleSignIn = async (username, password) => {
+  const handleSignIn = async (event) => {
+    event.preventDefault();
     try {
-      const user = await signIn(username, password);
-      console.log("Sign in successful:", user);
-      // Handle the signed in user information
+      const user = await signIn(email, password);
+      setUser(user); // Update the global user state
+      router.push('/dashboard'); // Redirect to a dashboard or another page
     } catch (error) {
       console.error("Error signing in", error);
+      // Handle error, show error message to user
     }
   };
 
@@ -102,9 +106,6 @@ export default function Home() {
     signInWithRedirect({ provider: "Google" });
   }
 
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const router = useRouter();
-
   const handleOpenModal = () => {
     setIsModalOpen(true);
   };
@@ -113,71 +114,67 @@ export default function Home() {
     setIsModalOpen(false);
   };
 
-  async function handleSignUp({ username, password, email, phone_number }) {
+  const handleSignUp = async (event) => {
+    event.preventDefault();
+    const data = new FormData(event.currentTarget);
+    const email = data.get('email');
+    const password = data.get('password');
+    const username = email; // If you are using the email as the username
+    const phone_number = data.get('phone_number');
+
     try {
       const { userSub } = await signUp({
         username,
         password,
         attributes: {
-          email, // email is required
-          phone_number, // optional
+          email,
+          phone_number, // optional - ensure it's in E.164 format
         },
       });
       console.log("Sign up successful, userSub:", userSub);
-      // Update UI to ask user to check their email for the verification code
-      setIsEmailVerificationRequired(true); // You need to add state management for this
+      // Redirect to form page after successful sign up
+      router.push('/form'); // Replace '/form' with your form page route
     } catch (error) {
-      console.error('Error signing up:', error);
+      console.error("Error signing up:", error);
     }
-  }
-  
+  };
 
-  async function handleSubmit(event) {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-    const email = data.get('email'); // Assuming 'email' is the name attribute in your form
-    const password = data.get('password');
-    const name = data.get('name');
-    const phone_number = data.get('phone_number'); // Assuming 'phone_number' is the name attribute in your form
-  
-    // Make sure the phone number is in E.164 format, e.g., +11234567890
-    // const formattedPhoneNumber = phone_number.startsWith('+') ? phone_number : `+1${phone_number}`;
-    const formattedPhoneNumber = phone_number;
-  
-    try {
-      // Try to sign in the user
-      const user = await signIn(email, password);
-      console.log("Sign in successful:", user);
-      // Redirect to a protected page or perform additional actions
-    } catch (error) {
-      if (error.code === 'UserNotFoundException') {
-        // User does not exist, attempt to sign them up
-        try {
-          const { user: newUser } = await signUp({
-            username: email,
-            password,
-            attributes: {
-              email, // assuming email is also the username
-              name, // optional, only if it's collected in the form
-              phone_number: formattedPhoneNumber, // E.164 formatting
-            },
-          });
-          console.log("Sign up successful:", newUser);
-  
-          // Optional: Sign in the newly created user automatically
-          // You may want to confirm their email or phone number before automatic sign-in
-        } catch (signUpError) {
-          console.error("Error during sign up:", signUpError);
-        // Handle sign up errors and provide feedback to the user
-      }
-    } else {
-      console.error("Error signing in:", error);
-      // Handle other sign-in errors and provide feedback to the user
-    }
-  }
-}
-  
+    const email = data.get("email");
+    const password = data.get("password");
+    const name = data.get("name");
+    const phone_number = data.get("phone_number");
 
+    // Make sure the phone number is in E.164 format
+    const formattedPhoneNumber = phone_number.startsWith('+') ? phone_number : `+1${phone_number}`;
+
+    try {
+      // Sign up the new user using the signUp API from Amplify
+      const { isSignUpComplete, userId, nextStep }= await signUp({
+        username: email, // Username will be the email
+        password,
+        options: {
+          userAttributes: {
+            email, // Email is required
+            'custom:name': name, // Optional: Full name, assuming you have configured a custom attribute
+            phone_number: formattedPhoneNumber, // Optional: Phone number in E.164 format
+          },
+          autoSignIn: {
+            enabled: true, // If you want to enable auto sign-in for the user after successful signup
+          }
+        }
+      });
+      console.log("Sign up successful, userId:", userId);
+
+      // Redirect to the form page after successful sign up
+      router.push('/form'); // Replace '/form' with the actual path to your form page
+    } catch (error) {
+      console.error("Error during sign up:", error);
+      // Handle sign up errors and provide feedback to the user
+    }
+  };
   return (
     <div className="font-sans">
       <Head>
@@ -314,106 +311,123 @@ export default function Home() {
       </section>
 
       {isModalOpen && (
-  <div className="fixed inset-0 z-50 flex items-center justify-center overflow-auto">
-    <div className="fixed inset-0 bg-gray-500 opacity-75"></div>
-    <div className="relative bg-white p-8 rounded-lg shadow-xl max-w-lg mx-auto"> {/* Increased max-width for larger form */}
-      <button
-        onClick={handleCloseModal}
-        className="absolute top-2 right-2 px-2 py-1 text-gray-900 bg-white rounded-full hover:bg-gray-100 focus:outline-none"
-      >
-        <XIcon className="h-6 w-6" />
-      </button>
-      <h3 className="text-2xl font-bold mb-4">Registration</h3>
-      <form onSubmit={handleSubmit} className="space-y-4">
-        <div>
-          <label htmlFor="name" className="block text-gray-700 font-semibold mb-1">
-            Full Name
-          </label>
-          <input
-            type="text"
-            id="name"
-            required
-            className="w-full border border-gray-300 px-3 py-2 rounded focus:outline-none focus:border-blue-500"
-          />
+        <div className="fixed inset-0 z-50 flex items-center justify-center overflow-auto">
+          <div className="fixed inset-0 bg-gray-500 opacity-75"></div>
+          <div className="relative bg-white p-8 rounded-lg shadow-xl max-w-lg mx-auto">
+            {" "}
+            {/* Increased max-width for larger form */}
+            <button
+              onClick={handleCloseModal}
+              className="absolute top-2 right-2 px-2 py-1 text-gray-900 bg-white rounded-full hover:bg-gray-100 focus:outline-none"
+            >
+              <XIcon className="h-6 w-6" />
+            </button>
+            <h3 className="text-2xl font-bold mb-4">Registration</h3>
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <div>
+                <label
+                  htmlFor="name"
+                  className="block text-gray-700 font-semibold mb-1"
+                >
+                  Full Name
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  required
+                  className="w-full border border-gray-300 px-3 py-2 rounded focus:outline-none focus:border-blue-500"
+                />
+              </div>
+              <div>
+                <label
+                  htmlFor="email"
+                  className="block text-gray-700 font-semibold mb-1"
+                >
+                  Email
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  required
+                  className="w-full border border-gray-300 px-3 py-2 rounded focus:outline-none focus:border-blue-500"
+                />
+              </div>
+              <div>
+                <label
+                  htmlFor="password"
+                  className="block text-gray-700 font-semibold mb-1"
+                >
+                  Password
+                </label>
+                <input
+                  type="password"
+                  id="password"
+                  required
+                  className="w-full border border-gray-300 px-3 py-2 rounded focus:outline-none focus:border-blue-500"
+                />
+              </div>
+              <div>
+                <label
+                  htmlFor="phone_number"
+                  className="block text-gray-700 font-semibold mb-1"
+                >
+                  Phone Number
+                </label>
+                <input
+                  type="tel"
+                  id="phone_number"
+                  required
+                  // pattern="[+][0-9]{11,14}" // E.164 format
+                  placeholder="+12345678900" // Example placeholder in E.164 format
+                  className="w-full border border-gray-300 px-3 py-2 rounded focus:outline-none focus:border-blue-500"
+                />
+              </div>
+              <button
+                type="submit"
+                className="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+              >
+                Register
+              </button>
+            </form>
+          </div>
         </div>
-        <div>
-          <label htmlFor="email" className="block text-gray-700 font-semibold mb-1">
-            Email
-          </label>
-          <input
-            type="email"
-            id="email"
-            required
-            className="w-full border border-gray-300 px-3 py-2 rounded focus:outline-none focus:border-blue-500"
-          />
-        </div>
-        <div>
-          <label htmlFor="password" className="block text-gray-700 font-semibold mb-1">
-            Password
-          </label>
-          <input
-            type="password"
-            id="password"
-            required
-            className="w-full border border-gray-300 px-3 py-2 rounded focus:outline-none focus:border-blue-500"
-          />
-        </div>
-        <div>
-          <label htmlFor="phone_number" className="block text-gray-700 font-semibold mb-1">
-            Phone Number
-          </label>
-          <input
-            type="tel"
-            id="phone_number"
-            required
-            // pattern="[+][0-9]{11,14}" // E.164 format
-            placeholder="+12345678900" // Example placeholder in E.164 format
-            className="w-full border border-gray-300 px-3 py-2 rounded focus:outline-none focus:border-blue-500"
-          />
-        </div>
-        <button
-          type="submit"
-          className="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-        >
-          Register
-        </button>
-      </form>
-    </div>
-  </div>
-)}
+      )}
 
-{isEmailVerificationRequired && (
-  <div className="fixed inset-0 z-50 flex items-center justify-center overflow-auto">
-    <div className="fixed inset-0 bg-gray-500 opacity-75"></div>
-    <div className="relative bg-white p-8 rounded-lg shadow-xl max-w-lg mx-auto">
-      <h3 className="text-2xl font-bold mb-4">Verify Your Email</h3>
-      <p>Please check your email for the verification code.</p>
-      <form onSubmit={handleEmailVerificationSubmit} className="space-y-4">
-        <div>
-          <label htmlFor="verificationCode" className="block text-gray-700 font-semibold mb-1">
-            Verification Code
-          </label>
-          <input
-            type="text"
-            id="verificationCode"
-            name="verificationCode"
-            required
-            className="w-full border border-gray-300 px-3 py-2 rounded focus:outline-none focus:border-blue-500"
-          />
+      {isEmailVerificationRequired && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center overflow-auto">
+          <div className="fixed inset-0 bg-gray-500 opacity-75"></div>
+          <div className="relative bg-white p-8 rounded-lg shadow-xl max-w-lg mx-auto">
+            <h3 className="text-2xl font-bold mb-4">Verify Your Email</h3>
+            <p>Please check your email for the verification code.</p>
+            <form
+              onSubmit={handleEmailVerificationSubmit}
+              className="space-y-4"
+            >
+              <div>
+                <label
+                  htmlFor="verificationCode"
+                  className="block text-gray-700 font-semibold mb-1"
+                >
+                  Verification Code
+                </label>
+                <input
+                  type="text"
+                  id="verificationCode"
+                  name="verificationCode"
+                  required
+                  className="w-full border border-gray-300 px-3 py-2 rounded focus:outline-none focus:border-blue-500"
+                />
+              </div>
+              <button
+                type="submit"
+                className="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+              >
+                Verify Email
+              </button>
+            </form>
+          </div>
         </div>
-        <button
-          type="submit"
-          className="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-        >
-          Verify Email
-        </button>
-      </form>
-    </div>
-  </div>
-)}
-
-
-
+      )}
     </div>
   );
 }
