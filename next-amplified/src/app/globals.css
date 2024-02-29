@@ -94,3 +94,11 @@ body {
   width: 120px;  
   height: 120px; 
 }
+
+.gradient-bg {
+  background: rgb(20,117,187);
+  background: -moz-linear-gradient(175deg, rgba(20,117,187,1) 30%, rgba(12,140,233,1) 49%, rgba(12,140,233,1) 56%, rgba(108,186,242,1) 70%);
+  background: -webkit-linear-gradient(175deg, rgba(20,117,187,1) 30%, rgba(12,140,233,1) 49%, rgba(12,140,233,1) 56%, rgba(108,186,242,1) 70%);
+  background: linear-gradient(175deg, rgba(20,117,187,1) 30%, rgba(12,140,233,1) 49%, rgba(12,140,233,1) 56%, rgba(108,186,242,1) 70%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#1475bb",endColorstr="#6cbaf2",GradientType=1);
+}
