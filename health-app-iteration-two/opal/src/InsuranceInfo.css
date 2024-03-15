@@ -1,0 +1,130 @@
+.InsuranceInfo {
+	text-align: center;
+      }
+      
+      .insurance-info-main {
+	padding: 40px;
+      }
+      
+      .insurance-info-main h1 {
+	font-size: 36px;
+	color: var(--rich-black);
+	margin-bottom: 30px;
+      }
+      
+      form {
+	max-width: 500px;
+	margin: 0 auto;
+      }
+      
+      .insurance-fields {
+	margin-bottom: 30px;
+      }
+      
+      .file-upload-container {
+	border: 2px dashed var(--periwinkle);
+	border-radius: 10px;
+	padding: 30px;
+	cursor: pointer;
+	transition: border-color 0.3s ease;
+      }
+      
+      .file-upload-container:hover {
+	border-color: var(--vista-blue);
+      }
+      
+      .file-upload-container img {
+	width: 50px;
+	height: 50px;
+	margin-bottom: 15px;
+      }
+      
+      .file-upload-container span {
+	display: block;
+	font-size: 18px;
+	color: var(--rich-black);
+      }
+      
+      input[type="file"] {
+	display: none;
+      }
+      
+      label {
+	display: block;
+	text-align: left;
+	font-size: 20px;
+	color: var(--rich-black);
+	margin-bottom: 10px;
+      }
+      
+      .select-wrapper {
+	position: relative;
+      }
+      
+      .select-wrapper::after {
+	content: '\25BC';
+	position: absolute;
+	top: 50%;
+	right: 15px;
+	transform: translateY(-50%);
+	color: var(--rich-black);
+	pointer-events: none;
+      }
+      
+      select,
+      input[type="text"] {
+	width: 100%;
+	padding: 20px;
+	border: 1px solid var(--periwinkle);
+	border-radius: 10px;
+	font-size: 18px;
+	appearance: none;
+	background-color: var(--antiflash-white);
+	color: var(--rich-black);
+      }
+      
+      select:focus,
+      input[type="text"]:focus {
+	outline: none;
+	border-color: var(--vista-blue);
+	box-shadow: 0 0 5px var(--periwinkle);
+      }
+      
+      button[type="submit"] {
+	background-color: var(--tropical-indigo);
+	color: var(--antiflash-white);
+	border: none;
+	padding: 20px 40px;
+	font-size: 24px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+	border-radius: 10px;
+	margin-top: 30px;
+      }
+      
+      button[type="submit"]:hover {
+	background-color: var(--vista-blue);
+      }
+      
+      footer {
+	background-color: var(--light-gray);
+	padding: 40px 0;
+      }
+      
+      .footer-info {
+	display: flex;
+	justify-content: space-around;
+	max-width: 800px;
+	margin: 0 auto;
+	text-align: left;
+      }
+      
+      .footer-info h4 {
+	color: var(--rich-black);
+	margin-bottom: 10px;
+      }
+      
+      .footer-info p {
+	color: var(--rich-black);
+	line-height: 1.6;
+      }

@@ -1,0 +1,72 @@
+.SignUp {
+	text-align: center;
+      }
+      
+      .sign-up-main {
+	padding: 40px;
+      }
+      
+      .sign-up-main h1 {
+	font-size: 36px;
+	color: var(--rich-black);
+	margin-bottom: 30px;
+      }
+      
+      form {
+	max-width: 400px;
+	margin: 0 auto;
+      }
+      
+      .name-fields {
+	display: flex;
+	justify-content: space-between;
+	gap: 2px; /* Add gap between first name and last name fields */
+      }
+      
+      .name-fields input {
+	width: 100%;
+      }
+      
+      input, button[type="submit"] {
+	display: block;
+	width: 100%;
+	margin-bottom: 20px;
+	padding: 15px;
+	border: 1px solid var(--periwinkle);
+	border-radius: 5px;
+	font-size: 20px;
+      }
+      
+      button[type="submit"] {
+	background-color: var(--tropical-indigo);
+	color: var(--antiflash-white);
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+      }
+      
+      button[type="submit"]:hover {
+	background-color: var(--vista-blue);
+      }
+      
+      footer {
+	background-color: var(--light-gray);
+	padding: 40px 0;
+      }
+      
+      .footer-info {
+	display: flex;
+	justify-content: space-around;
+	max-width: 800px;
+	margin: 0 auto;
+	text-align: left;
+      }
+      
+      .footer-info h4 {
+	color: var(--rich-black);
+	margin-bottom: 10px;
+      }
+      
+      .footer-info p {
+	color: var(--rich-black);
+	line-height: 1.6;
+      }

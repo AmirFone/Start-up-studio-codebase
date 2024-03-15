@@ -1,0 +1,271 @@
+/* App.css */
+
+:root {
+  --antiflash-white: #EEF1F5;
+  --periwinkle: #AAAAEE;
+  --vista-blue: #8396E2;
+  --rich-black: #10101B;
+  --tropical-indigo: #8E8DE8;
+  --light-gray: #F7F7F7; 
+}
+
+.App {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--antiflash-white);
+  text-decoration: none;
+}
+
+header {
+  background-color: var(--rich-black);
+  padding: 30px;
+  color: var(--antiflash-white);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav span {
+  font-size: 32px;
+  font-weight: bold;
+  color: var(--tropical-indigo);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  font-size: 20px;
+}
+
+.hero {
+  background-color: var(--periwinkle);
+  padding: 80px;
+  text-align: center;
+  color: var(--antiflash-white);
+}
+
+.hero h1 {
+  font-size: 48px;
+  margin-bottom: 30px;
+}
+
+.hero p {
+  font-size: 24px;
+  margin-bottom: 50px;
+}
+
+.hero button {
+  background: linear-gradient(135deg, #647CF8, #7C8EE8, #95A1D8);
+  color: var(--antiflash-white);
+  border: none;
+  padding: 15px 30px;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+   position: relative; /* Ensure the button is positioned */
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.features {
+  padding: 80px;
+}
+
+.features h2 {
+  font-size: 36px;
+  color: var(--rich-black);
+  margin-bottom: 50px;
+}
+
+.feature-cards {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.feature-card {
+  flex: 1;
+  background-color: var(--antiflash-white);
+  padding: 30px;
+  border-radius: 10px;
+  position: relative; /* Ensure the card is positioned */
+  overflow: hidden; /* Keeps the shadow within the card's border-radius */
+  transition: transform 0.3s ease-in-out, border 0.3s ease-in-out; /* Smooth transition for hover effect and border */
+  border: 2px solid transparent; /* Transparent border to maintain layout consistency */
+}
+
+.feature-card::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: linear-gradient(135deg, #CAA6CA, #DBB1BF, #B195DF);
+  filter: blur(10px);
+  border-radius: 10px; /* Match the card's border-radius */
+  transition: opacity 0.3s ease-in-out; /* Smooth transition for the shadow */
+  opacity: 0; /* Start with the shadow hidden */
+}
+
+.feature-card:hover::before {
+  opacity: 1; /* Reveal the shadow on hover */
+}
+
+.feature-card:hover {
+  transform: translateY(-5px); /* Slight lift effect on hover */
+  border: 2px solid var(--tropical-indigo); /* Change border color on hover */
+}
+
+.feature-card h3 {
+  font-size: 28px;
+  color: var(--rich-black);
+  margin-bottom: 15px;
+}
+
+.feature-card p {
+  color: var(--rich-black);
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
+.feature-card button {
+  background-color: var(--tropical-indigo);
+  color: var(--antiflash-white);
+  border: none;
+  padding: 15px 30px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+
+
+.cta {
+  background-color: var(--tropical-indigo);
+  padding: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--antiflash-white);
+}
+
+.cta-content {
+  flex: 1;
+  padding-right: 50px;
+}
+
+.cta h2 {
+  font-size: 36px;
+  margin-bottom: 30px;
+}
+
+.cta p {
+  font-size: 24px;
+  margin-bottom: 50px;
+}
+
+.cta button {
+  background-color: var(--antiflash-white);
+  color: var(--tropical-indigo);
+  border: none;
+  padding: 15px 30px;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.cta-image {
+  flex: 1;
+  text-align: right;
+}
+
+.cta-image img {
+  max-width: 100%;
+  height: auto;
+}
+
+.form-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px; /* Reduced padding */
+  background: linear-gradient(to right, var(--light-gray) , var(--antiflash-white)); /* Subtle background gradient */
+}
+
+.form-content {
+  flex: 1;
+  padding-right: 50px;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+.form-content h2 {
+  font-size: 36px;
+  background: -webkit-linear-gradient(var(--periwinkle), var(--vista-blue)); /* Gradient text */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 20px; /* Adjusted margin */
+}
+
+.form-content p {
+  color: var(--rich-black);
+  font-size: 24px;
+  line-height: 1.6;
+  margin-bottom: 40px; /* Adjusted margin */
+  padding: 0 20px; /* Padding for text */
+  background: var(--antiflash-white); /* Solid background to stand out on gradient */
+  border-left: 5px solid var(--periwinkle); /* Adds a highlight bar to the left */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* Subtle box shadow */
+}
+
+
+.form-container {
+  flex: 1;
+  padding: 30px;
+  background: var(--antiflash-white); /* Ensures the form background matches */
+  border: 1px solid var(--periwinkle); /* Adds a border to the form for definition */
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); /* Softens the shadow for a more modern look */
+}
+
+.form-container form {
+  max-width: 480px; /* Sets a max-width to prevent excessively wide fields */
+  margin: auto;
+}
+
+.form-container input,
+.form-container textarea {
+  display: block;
+  width: calc(100% - 30px); /* Accounts for padding */
+  margin-bottom: 20px; /* Reduces space for a tighter form */
+  padding: 15px;
+  border: 1px solid var(--periwinkle); /* Adds border to inputs for a cohesive look */
+  border-radius: 5px; /* Slightly round the edges of the input fields */
+  font-size: 20px;
+  background-color: #FFFFFF; /* Ensures input fields stand out as white */
+}
+
+.form-container textarea {
+  height: 120px; /* Sets a fixed height for the textarea */
+}
+
+.form-container button {
+  width: auto; /* Allows the button to shrink to fit content */
+  background-color: var(--tropical-indigo);
+  color: var(--antiflash-white);
+  border: none;
+  padding: 15px 30px;
+  font-size: 20px;
+  cursor: pointer;
+  border-radius: 5px; /* Rounds the button edges */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow to the button */
+  transition: background-color 0.3s ease; /* Smooth background color transition */
+}
+
+.form-container button:hover {
+  background-color: var(--vista-blue); /* Changes button color on hover */
+}
