@@ -1,0 +1,65 @@
+/* MailchimpModal.css */
+.modal-overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.6);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 1000;
+      }
+      
+      .modal {
+	background-color: var(--antiflash-white);
+	padding: 30px;
+	border-radius: 10px;
+	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+	max-width: 800px;
+	width: 100%;
+	position: relative;
+      }
+      
+      .modal h2 {
+	font-size: 24px;
+	margin-bottom: 10px;
+      }
+      
+      .modal input[type='email'] {
+	width: 100%;
+	padding: 10px;
+	margin-bottom: 10px;
+	border: 1px solid var(--periwinkle);
+	border-radius: 5px;
+      }
+      
+      .modal .button {
+	background-color: var(--tropical-indigo);
+	color: var(--antiflash-white);
+	border: none;
+	padding: 10px 20px;
+	font-size: 16px;
+	cursor: pointer;
+	border-radius: 5px;
+      }
+      
+      .close-button {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	font-size: 24px;
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+      }
+      
+      .brandingLogo img {
+	width: 220px;
+	height: 40px;
+	display: flex;
+	padding: 2px 0px;
+	justify-content: center;
+	align-items: center;
+      }

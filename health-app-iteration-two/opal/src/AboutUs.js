@@ -1,6 +1,10 @@
 import React from 'react';
 import './AboutUs.css';
 import person from './images/Humaaans.png';
+import amir from './images/amir.png';
+import divya from './images/divya.png';
+import samy from './images/samy.png'; 
+import stanislaw from './images/stanislaw.png';
 function AboutUs() {
   return (
     <div className="AboutUs">
@@ -22,43 +26,35 @@ Experience the convenience of managing your medical history online while having 
         <h2>Meet the Team</h2>
         <div className="team-members">
           <div className="team-member">
-            <div className="member-image"></div>
+            <div className="member-image">
+              <img src={samy} alt="Samy Froidefond" />
+            </div>
             <h3>Samy Froidefond</h3>
             <p>MBA with strategic experience in tech and pharmaceuticals</p>
           </div>
           <div className="team-member">
-            <div className="member-image"></div>
+            <div className="member-image">
+              <img src={divya} alt="Divya Madala" />
+            </div>
             <h3>Divya Madala</h3>
             <p>Technical MBA  with experience in healthcare systems</p>
           </div>
           <div className="team-member">
-            <div className="member-image"></div>
+            <div className="member-image">
+              <img src={amir} alt="Amir Hossain" />
+            </div>
             <h3>Amir Hossain</h3>
             <p>Software engineer with big Tech experience building full stack projects and training machine learning models</p>
           </div>
           <div className="team-member">
-            <div className="member-image"></div>
+            <div className="member-image">
+              <img src={stanislaw} alt="Stanisław Chajewski" />
+            </div>
             <h3>Stanisław Chajewski</h3>
             <p>Lawyer with experience deploying and developing tech in regulated sectors, focused on tech regulation, transactions and privacy</p>
           </div>
         </div>
       </section>
-      <footer>
-        <div className="footer-info">
-          <div>
-            <h4>Location</h4>
-            <p>1 East Loop rd<br/>New York, NY 12345</p>
-          </div>
-          <div>
-            <h4>Hours</h4>
-            <p>Monday — Friday<br/>6:30am — 11pm</p>  
-          </div>
-          <div>
-            <h4>Contact</h4>
-            <p>email@example.com<br/>(555) 555-5555</p>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 }

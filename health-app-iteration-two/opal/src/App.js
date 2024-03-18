@@ -1,4 +1,4 @@
-import React from 'react';
+import { React, useState, useEffect } from 'react';
 import './App.css';
 import LandingPage from './images/Landing_page.png';
 import SignUp from './SignUp';
@@ -7,11 +7,84 @@ import AccountVerification from './AccountVerification';
 import InsuranceInfo from './InsuranceInfo';
 import Contact from './Contact';
 import AboutUs from './AboutUs';
+// import MailingListModal from './MailingListModal';
+import MailchimpModal from './MailchimpModal';
 // import { useNavigate } from 'react-router-dom';
 import Dashboard from './Dashboard';
 function App() {
+  useEffect(() => {
+    // This timeout simulates the "page load" for the animation.
+    // Set this to the actual loading time of your data/components.
+    const timer = setTimeout(() => {
+      setAnimateCards(true);
+    }, 1000); // This could be tied to your actual component/page load logic.
+
+    return () => clearTimeout(timer);
+  }, []);
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    message: '',
+  });
+  // const [isModalOpen, setIsModalOpen] = useState(false);
+
+  // useEffect(() => {
+  //   const timer = setTimeout(() => {
+  //     setIsModalOpen(true);
+  //   }, 5000);
+
+  //   return () => clearTimeout(timer);
+  // }, []);
+
+  // const closeModal = () => {
+  //   setIsModalOpen(false);
+  // };
+
+  // const handleSubmit = (email) => {
+  //   // Send the email to your backend or a third-party service
+  //   console.log('Subscribed email:', email);
+  // };
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prevFormData => ({
+      ...prevFormData,
+      [name]: value // Update the formData state based on input name
+    }));
+  };
+  
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsModalOpen(true);
+    }, 5000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    
+    // Construct the mailto URL with the form data
+    const mailtoURL = `mailto:ah2324@cornell.edu?subject= I have a question about Opal!&body=First Name: ${formData.firstName}%0D%0ALast Name: ${formData.lastName}%0D%0AEmail: ${formData.email}%0D%0AMessage: ${formData.message}`;
+  
+    // Open the mailto URL in a new window or tab
+    window.open(mailtoURL, '_blank');
+  
+    // Reset form fields
+    setFormData({
+      firstName: '',
+      lastName: '',
+      email: '',
+      message: '',
+    });
+  };
   return (
     <Router>
+      <MailchimpModal isOpen={isModalOpen} onClose={closeModal} />
       <div className="App">
         <header>
           <nav>
@@ -19,7 +92,6 @@ function App() {
 
             <ul>
             <li><Link to="/signup" className="nav-link">Sign up</Link></li>
-            <li><Link to="/AccountVerification" className="nav-link">Log in</Link></li>
             <li><Link to="/about-us" className="nav-link">About Us</Link></li>
             <li><Link to="/contact" className="nav-link">Contact</Link></li>
 
@@ -72,15 +144,37 @@ function App() {
                   <p>Discover the power of having your health information at your fingertips. Explore your medical history, lab results, and more with ease. Take control of your healthcare journey today.</p>
                 </div>
                 <div className="form-container">
-                  <form>
-                    <input type="text" placeholder="Name" />
-                    <input type="tel" placeholder="Phone" />
-                    <input type="email" placeholder="Email" />
-                    <textarea placeholder="Comment or Message"></textarea>
-                    <button type="submit">Submit</button>
-                  </form>
-                </div>
-              </section>
+          <form onSubmit={handleSubmit}>
+            <input
+              type="text"
+              placeholder="First Name"
+              name="firstName"
+              value={formData.firstName}
+              onChange={handleInputChange}
+            />
+            <input
+              type="text"
+              placeholder="Last Name"
+              name="lastName"
+              value={formData.lastName}
+              onChange={handleInputChange}
+            />
+            <input
+              type="email"
+              placeholder="Email"
+              name="email"
+              value={formData.email}
+              onChange={handleInputChange}
+            />
+            <textarea
+              placeholder="Comment or Message"
+              name="message"
+              value={formData.message}
+              onChange={handleInputChange}
+            ></textarea>
+            <button type="submit">Submit</button>
+          </form>
+        </div>              </section>
               <section className="footer-info">
                   <div className="footer-info">
                   <div>
@@ -106,8 +200,27 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/Dashboard" element={<Dashboard />} />
         </Routes>
+      
+        <footer>
+        <div className="footer-info">
+          <div>
+            <h4>Location</h4>
+            <p>1 East Loop rd<br/>New York, NY 12345</p>
+          </div>
+          <div>
+            <h4>Hours</h4>
+            <p>Monday — Friday<br/>6:30am — 11pm</p>  
+          </div>
+          <div>
+            <h4>Contact</h4>
+            <p>email@example.com<br/>(555) 555-5555</p>
+          </div>
+        </div>
+      </footer>
       </div>
+
     </Router>
+    
   );
 }
 

@@ -70,3 +70,8 @@
 	color: var(--rich-black);
 	line-height: 1.6;
       }
+      input[type="email"], input[type="tel"] {
+	background-color: transparent; /* Set the background to transparent */
+	/* Other styles remain the same */
+      }
+      

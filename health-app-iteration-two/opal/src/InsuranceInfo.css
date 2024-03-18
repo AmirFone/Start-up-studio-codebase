@@ -29,8 +29,9 @@
 	transition: border-color 0.3s ease;
       }
       
-      .file-upload-container:hover {
+      .file-upload-container.drag-over {
 	border-color: var(--vista-blue);
+	background-color: var(--tropical-indigo);
       }
       
       .file-upload-container img {
@@ -47,6 +48,21 @@
       
       input[type="file"] {
 	display: none;
+      }
+      
+      .file-info {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+      }
+      
+      .file-info p {
+	margin-right: 10px;
+      }
+      
+      .file-info i {
+	color: var(--tropical-indigo);
+	font-size: 20px;
       }
       
       label {

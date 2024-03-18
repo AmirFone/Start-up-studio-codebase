@@ -1,14 +1,44 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './InsuranceInfo.css';
 import { useNavigate } from 'react-router-dom';
+import Upload from './images/Upload.png';
 
 function InsuranceInfo() {
-
   const navigate = useNavigate();
+  const [uploadedFile, setUploadedFile] = useState(null);
+  const [isDragOver, setIsDragOver] = useState(false);
+
+  const handleDrop = (e) => {
+    e.preventDefault();
+    const file = e.dataTransfer.files[0];
+    if (file && (file.type === 'image/jpeg' || file.type === 'image/png' || file.type === 'application/pdf')) {
+      setUploadedFile(file);
+    }
+    setIsDragOver(false);
+  };
+
+  const handleDragOver = (e) => {
+    e.preventDefault();
+    setIsDragOver(true);
+  };
+
+  const handleDragLeave = () => {
+    setIsDragOver(false);
+  };
+
+  const handleFileChange = (e) => {
+    const file = e.target.files[0];
+    if (file && (file.type === 'image/jpeg' || file.type === 'image/png' || file.type === 'application/pdf')) {
+      setUploadedFile(file);
+    }
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
+    // Perform file upload or other necessary actions
     navigate('/Dashboard');
   };
+
   return (
     <div className="InsuranceInfo">
       <main className="insurance-info-main">
@@ -16,19 +46,52 @@ function InsuranceInfo() {
         <form onSubmit={handleSubmit}>
           <div className="insurance-fields">
             <label htmlFor="file-upload">
-              <div className="file-upload-container">
-                <img src="upload-icon.svg" alt="Upload Icon" />
-                <span>Drop & drop files or Browse</span>
+              <div
+                className={`file-upload-container ${isDragOver ? 'drag-over' : ''}`}
+                onDrop={handleDrop}
+                onDragOver={handleDragOver}
+                onDragLeave={handleDragLeave}
+              >
+                {uploadedFile ? (
+                  <div className="file-info">
+                    <p>{uploadedFile.name}</p>
+                    <i className="fas fa-check-circle"></i>
+                  </div>
+                ) : (
+                  <>
+                    <img src={Upload} alt="Upload Icon" />
+                    <span>Drop & drop files or Browse</span>
+                  </>
+                )}
               </div>
             </label>
-            <input id="file-upload" type="file" accept=".jpg,.jpeg,.png,.pdf" />
+            <input
+              id="file-upload"
+              type="file"
+              accept=".jpg,.jpeg,.png,.pdf"
+              onChange={handleFileChange}
+            />
           </div>
           <div className="insurance-fields">
             <label htmlFor="insurance-provider">Insurance Provider:</label>
             <div className="select-wrapper">
               <select id="insurance-provider">
                 <option value="">Select provider</option>
-                {/* Add more insurance provider options */}
+                <option value="Aetna">Aetna</option>
+                <option value="Anthem">Anthem</option>
+                <option value="Blue Cross Blue Shield">Blue Cross Blue Shield</option>
+                <option value="Cigna">Cigna</option>
+                <option value="Humana">Humana</option>
+                <option value="Kaiser Permanente">Kaiser Permanente</option>
+                <option value="Medicaid">Medicaid</option>
+                <option value="Medicare">Medicare</option>
+                <option value="MetLife">MetLife</option>
+                <option value="Oscar Health">Oscar Health</option>
+                <option value="Oxford Health Plans">Oxford Health Plans</option>
+                <option value="Tricare">Tricare</option>
+                <option value="UnitedHealthcare">UnitedHealthcare</option>
+                <option value="WellPoint">WellPoint</option>
+                <option value="Other">Other</option>
               </select>
             </div>
           </div>
@@ -44,25 +107,9 @@ function InsuranceInfo() {
             <label htmlFor="group-number">Group Number:</label>
             <input id="group-number" type="text" placeholder="Group number" />
           </div>
-          <button type="submit" >Submit →</button>
+          <button type="submit">Submit →</button>
         </form>
       </main>
-      <footer>
-        <div className="footer-info">
-          <div>
-            <h4>Location</h4>
-            <p>1 East Loop rd<br/>New York, NY 12345</p>
-          </div>
-          <div>
-            <h4>Hours</h4>
-            <p>Monday — Friday<br/>6:30am — 11pm</p>  
-          </div>
-          <div>
-            <h4>Contact</h4>
-            <p>email@example.com<br/>(555) 555-5555</p>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 }

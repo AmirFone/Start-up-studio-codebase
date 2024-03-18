@@ -97,6 +97,8 @@ nav ul {
   overflow: hidden; /* Keeps the shadow within the card's border-radius */
   transition: transform 0.3s ease-in-out, border 0.3s ease-in-out; /* Smooth transition for hover effect and border */
   border: 2px solid transparent; /* Transparent border to maintain layout consistency */
+  border: 2px solid var(--tropical-indigo); /* Set the initial border */
+  animation: glowingBorder 2s ease-in-out ;
 }
 
 .feature-card::before {
@@ -325,3 +327,10 @@ footer {
 	color: var(--antiflash-white);
 	line-height: 1.6;
       }
+
+@keyframes glowingBorder {
+        0% { border-color: var(--tropical-indigo); box-shadow: 0 0 5px var(--tropical-indigo); }
+        50% { border-color: var(--vista-blue); box-shadow: 0 0 20px var(--vista-blue); }
+        100% { border-color: var(--tropical-indigo); box-shadow: 0 0 5px var(--tropical-indigo); }
+      }
+      

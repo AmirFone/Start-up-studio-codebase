@@ -15,8 +15,20 @@ function Contact() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // TODO: Implement form submission logic
-    console.log(formData);
+    
+    // Construct the mailto URL with the form data
+    const mailtoURL = `mailto:ah2324@cornell.edu?subject= I have a question about Opal!&body=First Name: ${formData.firstName}%0D%0ALast Name: ${formData.lastName}%0D%0AEmail: ${formData.email}%0D%0AMessage: ${formData.message}`;
+  
+    // Open the mailto URL in a new window or tab
+    window.open(mailtoURL, '_blank');
+  
+    // Reset form fields
+    setFormData({
+      firstName: '',
+      lastName: '',
+      email: '',
+      message: '',
+    });
   };
 
   return (

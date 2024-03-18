@@ -25,22 +25,6 @@ function SignUp() {
           <button type="submit">Continue →</button>
         </form>
       </main>
-      <footer>
-        <div className="footer-info">
-          <div>
-            <h4>Location</h4>
-            <p>1 East Loop rd<br/>New York, NY 12345</p>
-          </div>
-          <div>
-            <h4>Hours</h4>
-            <p>Monday — Friday<br/>6:30am — 11pm</p>  
-          </div>
-          <div>
-            <h4>Contact</h4>
-            <p>email@example.com<br/>(555) 555-5555</p>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 }
