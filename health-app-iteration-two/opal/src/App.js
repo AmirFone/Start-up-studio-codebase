@@ -12,12 +12,12 @@ import MailchimpModal from './MailchimpModal';
 // import { useNavigate } from 'react-router-dom';
 import Dashboard from './Dashboard';
 function App() {
-  useEffect(() => {
-    // This timeout simulates the "page load" for the animation.
-    // Set this to the actual loading time of your data/components.
-    const timer = setTimeout(() => {
-      setAnimateCards(true);
-    }, 1000); // This could be tied to your actual component/page load logic.
+  // useEffect(() => {
+  //   // This timeout simulates the "page load" for the animation.
+  //   // Set this to the actual loading time of your data/components.
+  //   const timer = setTimeout(() => {
+  //     setAnimateCards(true);
+  //   }, 1000); // This could be tied to your actual component/page load logic.
 
     return () => clearTimeout(timer);
   }, []);
