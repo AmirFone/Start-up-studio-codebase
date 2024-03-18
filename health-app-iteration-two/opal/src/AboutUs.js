@@ -1,6 +1,6 @@
 import React from 'react';
 import './AboutUs.css';
-
+import person from './images/Humaaans.png';
 function AboutUs() {
   return (
     <div className="AboutUs">
@@ -15,7 +15,7 @@ Rest assured that every record is handled with the utmost care and professionali
 Experience the convenience of managing your medical history online while having the peace of mind that your data is safe and protected.          </p>
         </section>
         <section className="about-us-image">
-          <img src="path/to/image.jpg" alt="About Us" />
+          <img src={person} alt="About Us" />
         </section>
       </main>
       <section className="meet-the-team">
