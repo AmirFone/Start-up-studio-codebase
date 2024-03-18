@@ -19,8 +19,8 @@ function App() {
   //     setAnimateCards(true);
   //   }, 1000); // This could be tied to your actual component/page load logic.
 
-    return () => clearTimeout(timer);
-  }, []);
+  //   return () => clearTimeout(timer);
+  // }, []);
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
