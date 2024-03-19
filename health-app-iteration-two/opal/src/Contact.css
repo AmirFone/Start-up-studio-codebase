@@ -1,5 +1,8 @@
+/* Contact.css */
+
 .Contact {
   text-align: center;
+  background-color: var(--antiflash-white);
 }
 
 .contact-main {
@@ -15,7 +18,7 @@
 .contact-form {
   flex: 1;
   animation: fadeInUp 0.5s ease-out forwards;
-  opacity: 0; /* Start elements as invisible before animation */
+  opacity: 0;
 }
 
 .contact-content {
@@ -44,12 +47,90 @@
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
 
+.implementation-plan,
+.contact-form-section {
+  padding: 40px;
+  background-color: var(--antiflash-white);
+}
+
+.card {
+  background-color: var(--light-gray);
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  margin-bottom: 40px;
+}
+
+.card h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  color: var(--rich-black);
+  font-size: 36px;
+}
+
+.steps {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  background-color: var(--antiflash-white);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.step.active {
+  opacity: 1;
+  transform: translateY(0);
+  background-color: var(--periwinkle);
+}
+
+.step-number {
+  font-size: 32px;
+  font-weight: bold;
+  color: var(--antiflash-white);
+  background-color: var(--tropical-indigo);
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.step-content {
+  flex: 1;
+}
+
+.step-content h3 {
+  margin-top: 0;
+  color: var(--rich-black);
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.step-content p {
+  line-height: 1.6;
+  color: var(--rich-black);
+  font-size: 20px;
+}
+
 .contact-form {
   max-width: 500px;
+  margin: 0 auto;
 }
 
 .form-group {
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   text-align: left;
 }
 
@@ -63,11 +144,13 @@
 .form-group input,
 .form-group textarea {
   width: 100%;
-  padding: 15px;
+  padding: 20px;
   font-size: 18px;
-  border-radius: 5px;
+  border-radius: 10px;
   border: 1px solid var(--periwinkle);
-  transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Added transition for focus effect */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  background-color: var(--antiflash-white);
+  color: var(--rich-black);
 }
 
 .form-group textarea {
@@ -78,19 +161,19 @@
 .form-group textarea:focus {
   outline: none;
   border-color: var(--vista-blue);
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 5px var(--periwinkle);
 }
 
 .contact-form button[type='submit'] {
   background-color: var(--tropical-indigo);
   color: var(--antiflash-white);
   border: none;
-  padding: 15px 30px;
-  font-size: 20px;
+  padding: 20px 40px;
+  font-size: 24px;
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: 10px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  transition: background-color 0.3s ease, transform 0.2s ease; /* Added transform to transitions */
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .contact-form button[type='submit']:hover {
@@ -131,137 +214,195 @@ footer {
     transform: translateY(0);
   }
 }
-.Contact {
-	text-align: center;
-      }
-      
-      .contact-main {
-	padding: 80px 40px;
-	max-width: 1200px;
-	margin: 0 auto;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-      }
-      
-      .contact-content,
-      .contact-form {
-	flex: 1;
-	animation: fadeInUp 0.5s ease-out forwards;
-	opacity: 0; /* Start elements as invisible before animation */
-      }
-      
-      .contact-content {
-	padding-right: 40px;
-	text-align: left;
-      }
-      
-      .contact-content h2 {
-	font-size: 48px;
-	color: var(--rich-black);
-	margin-bottom: 20px;
-	text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
-	background: -webkit-linear-gradient(var(--periwinkle), var(--vista-blue));
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
-      }
-      
-      .contact-content p {
-	font-size: 24px;
-	color: var(--rich-black);
-	line-height: 1.6;
-	margin-bottom: 40px;
-	padding: 20px;
-	background: var(--antiflash-white);
-	border-left: 5px solid var(--periwinkle);
-	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-      }
-      
-      .contact-form {
-	max-width: 500px;
-      }
-      
-      .form-group {
-	margin-bottom: 20px;
-	text-align: left;
-      }
-      
-      .form-group label {
-	display: block;
-	font-size: 20px;
-	color: var(--rich-black);
-	margin-bottom: 10px;
-      }
-      
-      .form-group input,
-      .form-group textarea {
-	width: 100%;
-	padding: 15px;
-	font-size: 18px;
-	border-radius: 5px;
-	border: 1px solid var(--periwinkle);
-	transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Added transition for focus effect */
-      }
-      
-      .form-group textarea {
-	height: 150px;
-      }
-      
-      .form-group input:focus,
-      .form-group textarea:focus {
-	outline: none;
-	border-color: var(--vista-blue);
-	box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-      }
-      
-      .contact-form button[type='submit'] {
-	background-color: var(--tropical-indigo);
-	color: var(--antiflash-white);
-	border: none;
-	padding: 15px 30px;
-	font-size: 20px;
-	cursor: pointer;
-	border-radius: 5px;
-	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-	transition: background-color 0.3s ease, transform 0.2s ease; /* Added transform to transitions */
-      }
-      
-      .contact-form button[type='submit']:hover {
-	background-color: var(--vista-blue);
-	transform: translateY(-2px);
-      }
-      
-      footer {
-	background-color: var(--light-gray);
-	padding: 40px 0;
-      }
-      
-      .footer-info {
-	display: flex;
-	justify-content: space-around;
-	max-width: 800px;
-	margin: 0 auto;
-	text-align: left;
-      }
-      
-      .footer-info h4 {
-	color: var(--rich-black);
-	margin-bottom: 10px;
-      }
-      
-      .footer-info p {
-	color: var(--rich-black);
-	line-height: 1.6;
-      }
-      
-      @keyframes fadeInUp {
-	from {
-	  opacity: 0;
-	  transform: translateY(20px);
-	}
-	to {
-	  opacity: 1;
-	  transform: translateY(0);
-	}
-      }
-      
+
+
+/* Contact.css */
+
+/* ... Previous CSS code ... */
+
+.steps {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  background-color: var(--antiflash-white);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.5s ease-out forwards;
+}
+
+.step-number {
+  font-size: 32px;
+  font-weight: bold;
+  color: var(--antiflash-white);
+  background-color: var(--tropical-indigo);
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.step-content {
+  flex: 1;
+}
+
+.step-content h3 {
+  margin-top: 0;
+  color: var(--rich-black);
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.step-content p {
+  line-height: 1.6;
+  color: var(--rich-black);
+  font-size: 20px;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Existing styles */
+
+.implementation-plan {
+  padding: 40px;
+  background-color: var(--antiflash-white);
+}
+
+.card {
+  background-color: var(--antiflash-white);
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 40px;
+}
+
+.card h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  color: var(--tropical-indigo);
+}
+
+.steps {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  background-color: var(--periwinkle);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.step.active {
+  opacity: 1;
+  transform: translateY(0);
+  background-color: var(--vista-blue);
+}
+
+.step-number {
+  font-size: 32px;
+  font-weight: bold;
+  color: var(--antiflash-white);
+  background-color: var(--tropical-indigo);
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.step-content {
+  flex: 1;
+}
+
+.step-content h3 {
+  margin-top: 0;
+  color: var(--rich-black);
+}
+
+.step-content p {
+  line-height: 1.6;
+  color: var(--rich-black);
+}
+
+.contact-form-section {
+  padding: 40px;
+  background-color: var(--antiflash-white);
+}
+
+.contact-form {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 15px;
+  font-size: 18px;
+  border-radius: 5px;
+  border: 1px solid var(--periwinkle);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group textarea {
+  height: 150px;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--vista-blue);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form button[type='submit'] {
+  background-color: var(--tropical-indigo);
+  color: var(--antiflash-white);
+  border: none;
+  padding: 15px 30px;
+  font-size: 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.contact-form button[type='submit']:hover {
+  background-color: var(--vista-blue);
+  transform: translateY(-2px);
+}

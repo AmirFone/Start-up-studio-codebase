@@ -132,7 +132,7 @@ function App() {
                 <div className="cta-content">
                   <h2>Access your personal health information</h2>
                   <p>Retrieve and securely view your medical records with ease. We prioritize the safety and confidentiality of your health data. Trust us to handle your information responsibly.</p>
-                  <button>Contact Us</button>
+                  <button><Link to="/contact" className="nav-link">Contact Us</Link></button>
                 </div>
                 <div className="cta-image">
                   <img src={LandingPage} alt="Access your personal health information" />
@@ -174,23 +174,9 @@ function App() {
             ></textarea>
             <button type="submit">Submit</button>
           </form>
-        </div>              </section>
-              <section className="footer-info">
-                  <div className="footer-info">
-                  <div>
-                    <h4>Location</h4>
-                    <p>1 East Loop rd<br/>New York, NY 12345</p>
-                  </div>
-                  <div>
-                    <h4>Hours</h4>
-                    <p>Monday — Friday<br/>6:30am — 11pm</p>  
-                  </div>
-                  <div>
-                    <h4>Contact</h4>
-                    <p>email@example.com<br/>(555) 555-5555</p>
-                  </div>
-                </div>
-              </section>
+        </div>              
+        </section>
+   
             </main>         
            } />
           <Route path="/about-us" element={<AboutUs />} />
@@ -213,7 +199,7 @@ function App() {
           </div>
           <div>
             <h4>Contact</h4>
-            <p>email@example.com<br/>(555) 555-5555</p>
+            <p>email@cornell.edu<br/>(555) 555-5555</p>
           </div>
         </div>
       </footer>
