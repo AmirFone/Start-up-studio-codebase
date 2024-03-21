@@ -1,50 +1,23 @@
 import { React, useState, useEffect } from 'react';
 import './App.css';
-import LandingPage from './images/Landing_page.png';
+import BackendDemo from './images/Backend_demo.mp4';
 import SignUp from './SignUp';
 import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
 import AccountVerification from './AccountVerification';
 import InsuranceInfo from './InsuranceInfo';
 import Contact from './Contact';
 import AboutUs from './AboutUs';
-// import MailingListModal from './MailingListModal';
 import MailchimpModal from './MailchimpModal';
-// import { useNavigate } from 'react-router-dom';
 import Dashboard from './Dashboard';
 function App() {
-  // useEffect(() => {
-  //   // This timeout simulates the "page load" for the animation.
-  //   // Set this to the actual loading time of your data/components.
-  //   const timer = setTimeout(() => {
-  //     setAnimateCards(true);
-  //   }, 1000); // This could be tied to your actual component/page load logic.
 
-  //   return () => clearTimeout(timer);
-  // }, []);
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
     email: '',
     message: '',
   });
-  // const [isModalOpen, setIsModalOpen] = useState(false);
 
-  // useEffect(() => {
-  //   const timer = setTimeout(() => {
-  //     setIsModalOpen(true);
-  //   }, 5000);
-
-  //   return () => clearTimeout(timer);
-  // }, []);
-
-  // const closeModal = () => {
-  //   setIsModalOpen(false);
-  // };
-
-  // const handleSubmit = (email) => {
-  //   // Send the email to your backend or a third-party service
-  //   console.log('Subscribed email:', email);
-  // };
   const [isModalOpen, setIsModalOpen] = useState(false);
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -129,15 +102,17 @@ function App() {
                 </div>
               </section>
               <section className="cta">
-                <div className="cta-content">
-                  <h2>Access your personal health information</h2>
-                  <p>Retrieve and securely view your medical records with ease. We prioritize the safety and confidentiality of your health data. Trust us to handle your information responsibly.</p>
-                  <button><Link to="/contact" className="nav-link">Contact Us</Link></button>
-                </div>
-                <div className="cta-image">
-                  <img src={LandingPage} alt="Access your personal health information" />
-                </div>
-              </section>
+  <div className="cta-content">
+    <h2>Access your personal health information</h2>
+    <p>Retrieve and securely view your medical records with ease. We prioritize the safety and confidentiality of your health data. Trust us to handle your information responsibly.</p>
+    <button><Link to="/contact" className="nav-link">Contact Us</Link></button>
+  </div>
+  <div className="cta-video-card">
+    <div className="video-card">
+      <video src={BackendDemo} alt="Access your personal health information" controls />
+    </div>
+  </div>
+</section>
               <section className="form-section">
                 <div className="form-content">
                   <h2>Access your medical records</h2>
