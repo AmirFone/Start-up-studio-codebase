@@ -102,21 +102,20 @@ function App() {
                 </div>
               </section>
               <section className="cta">
-  <div className="cta-content">
-    <h2>Access your personal health information</h2>
-    <p>Retrieve and securely view your medical records with ease. We prioritize the safety and confidentiality of your health data. Trust us to handle your information responsibly.</p>
-    <button><Link to="/contact" className="nav-link">Contact Us</Link></button>
-  </div>
-  <div className="cta-video-card">
-    <div className="video-card">
-    <div style={{ textAlign: 'center' }}>
-  <h3 style={{ color: 'black' }}>Our Future Backend Implementation Visualized</h3>
-</div>
-
-      <video src="https://backenddemo23423.s3.amazonaws.com/backend_demo_part%20two%20.mp4" alt="Access your personal health information" controls />
-    </div>
-  </div>
-</section>
+              <div className="cta-content">
+                <h2>Access your personal health information</h2>
+                <p>Retrieve and securely view your medical records with ease. We prioritize the safety and confidentiality of your health data. Trust us to handle your information responsibly.</p>
+                <button><Link to="/contact" className="nav-link">Contact Us</Link></button>
+              </div>
+              <div className="cta-video-card">
+                <div className="video-card">
+                  <div style={{ textAlign: 'center' }}>
+                    <h3 style={{ color: 'black' }}>Our Future Backend Implementation Visualized</h3>
+                  </div>
+                  <video src="https://backenddemo23423.s3.amazonaws.com/backend_demo_part%20two%20.mp4" alt="Access your personal health information" controls muted />
+                </div>
+              </div>
+            </section>
               <section className="form-section">
                 <div className="form-content">
                   <h2>Access your medical records</h2>
