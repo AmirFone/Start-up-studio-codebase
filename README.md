@@ -1,6 +1,6 @@
-# Start of Studio Repository
+# Startup Studio Repository
 
-This repository contains the initial iterations of code for the Start of Studio class.
+This repository contains the initial iterations of code for the Startup Studio class.
 
 ## Description
 
