@@ -1,82 +1,58 @@
+# Start of Studio Repository
 
-# Centralized Health Management Platform
+This repository contains the initial iterations of code for the Start of Studio class.
 
-## About The Project
+## Description
 
-This project aims to provide a centralized platform for users to manage their medical information, health records, and appointments with healthcare providers. It features a modern web interface built with Next.js and Tailwind CSS, offering users a seamless and interactive experience. 
-
-### Built With
-
-- [Next.js](https://nextjs.org/)
-- [Tailwind CSS](https://tailwindcss.com/)  
-- [React](https://reactjs.org/)
+The purpose of this repository is to track the progress and development of code throughout the Start of Studio class. It serves as a central location to store and manage different versions of the code as it evolves.
 
 ## Getting Started
 
-To get a local copy up and running follow these simple steps.
+To get started with this repository, follow these steps:
 
-### Prerequisites
+1. Clone the repository to your local machine using the following command:
+	git clone https://github.com/your-username/start-of-studio.git
 
-Before running the project, make sure you have Node.js and npm installed on your system.
+2. Navigate to the cloned repository directory:
+	cd start-of-studio
 
-- npm
-	npm install npm@latest -g
-  
-### Installation
+3. Explore the different iterations of the code stored in separate directories or branches.
 
-1. Clone the repo
+## Repository Structure
 
+The repository is structured as follows:
+```
+  start-of-studio/
+  ├── iteration1/
+  │   ├── main.py
+  │   └── ...
+  ├── iteration2/
+  │   ├── main.py
+  │   └── ...
+  ├── iteration3/
+  │   ├── main.py
+  │   └── ...
+  └── README.md
 
-   git clone https://github.com/AmirFone/Start-up-studio-codebase.git
+```
 
-2. Install NPM packages
-
-   	npm install
-
-### Usage
-
-To start the development server:
-
-	npm run dev
-
-Open http://localhost:3000 with your browser to see the result.
-
-## Roadmap
-
-- User authentication and authorization
-- Health records management  
-- Appointment scheduling system
-- Integration with healthcare provider databases
-- Mobile responsive design
-
-See the open issues for a full list of proposed features (and known issues).
+- Each iteration of the code is stored in a separate directory (e.g., `iteration1`, `iteration2`, `iteration3`).
+- The `main.py` file within each iteration directory contains the main code for that iteration.
+- The `README.md` file provides an overview of the repository and instructions for getting started.
 
 ## Contributing
 
-Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+If you would like to contribute to this repository, please follow these guidelines:
 
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)  
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+1. Fork the repository to your own GitHub account.
+2. Create a new branch for your changes:
+	git checkout -b my-new-feature
 
-## License
+3. Make your changes and commit them with descriptive commit messages.
+4. Push your changes to your forked repository:
+	git push origin my-new-feature
 
-Distributed under the MIT License. See `LICENSE` for more information.
-
-
-## Contact
-
-Amir Hossain - [@your_twitter](https://twitter.com/your_twitter) - 
-Ah2324@cornell.edu
-
-Project Link: [https://github.com/AmirFone/Start-up-studio-codebase.git](https://github.com/AmirFone/Start-up-studio-codebase.git)
+5. Open a pull request in this repository, describing your changes and the purpose behind them.
 
 
-## Acknowledgements
-
-- [Font Awesome](https://fontawesome.com)
-- [React Icons](https://react-icons.github.io/react-icons/search)
-- [Heroicons](https://heroicons.com/)
-- [Next.js Docs](https://nextjs.org/docs)
+Happy coding!
