@@ -46,8 +46,6 @@ If you would like to contribute to this repository, please follow these guidelin
 
 1. Fork the repository to your own GitHub account.
 2. Create a new branch for your changes:
-	git checkout -b my-new-feature
-
 3. Make your changes and commit them with descriptive commit messages.
 4. Push your changes to your forked repository:
 	git push origin my-new-feature
