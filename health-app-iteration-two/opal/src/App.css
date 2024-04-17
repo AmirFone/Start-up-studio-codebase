@@ -10,15 +10,16 @@
 }
 
 .App {
-  font-family: Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   margin: 0;
   padding: 0;
   background-color: var(--antiflash-white);
   text-decoration: none;
-}
+  color: var(--rich-black);
+  }
 
 header {
-  background-color: var(--rich-black);
+  background-color: var(--tropical-indigo);
   padding: 30px;
   color: var(--antiflash-white);
   animation: glow 3s ease-in-out forwards;
@@ -28,6 +29,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  color: var(--rich-black);
 }
 
 nav span {
@@ -47,7 +49,7 @@ nav ul {
   background-color: var(--periwinkle);
   padding: 80px;
   text-align: center;
-  color: var(--antiflash-white);
+  color: var(--rich-black);
 }
 
 .hero h1 {
@@ -368,4 +370,3 @@ footer {
 
 
 
-      

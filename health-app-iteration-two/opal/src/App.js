@@ -1,6 +1,7 @@
 import { React, useState, useEffect } from 'react';
 import './App.css';
-import BackendDemo from './images/Backend_demo.mp4';
+// import BackendDemo from './images/Backend_demo.mp4';
+import linkedInIcon from './images/linkedin.png';
 import SignUp from './SignUp';
 import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
 import AccountVerification from './AccountVerification';
@@ -59,24 +60,27 @@ function App() {
     <Router>
       <MailchimpModal isOpen={isModalOpen} onClose={closeModal} />
       <div className="App">
-        <header>
-          <nav>
-            <span><Link to="/" style={{ textDecoration: 'none' }}>OPAL</Link></span>
-
-            <ul>
+      <header>
+        <nav>
+          <span><Link to="/" style={{ textDecoration: 'none' }}>OPAL</Link></span>
+          <ul>
             <li><Link to="/signup" className="nav-link">Sign up</Link></li>
             <li><Link to="/about-us" className="nav-link">About Us</Link></li>
             <li><Link to="/contact" className="nav-link">Contact</Link></li>
-
-            </ul>
-          </nav>
-        </header>
+            <li>
+              <a href="https://www.linkedin.com/company/opalwallet/about/" target="_blank" rel="noopener noreferrer">
+              <img src={linkedInIcon} alt="LinkedIn" width="50" height="50" />
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </header>
         <Routes>
           <Route exact path="/" element={
             <main>
               <section className="hero">
-                <h1>Empower yourself with your medical data</h1>
-                <p>Welcome to your secure medical record view page designed for your convenience and peace of mind.</p>
+                <h1>Giving you full control of your health information</h1>
+                <p>Giving the power back to patients, because they deserve it.</p>
                 <Link to="/contact" style={{ textDecoration: 'none' }}>
                   <button>LEARN MORE</button>
                 </Link>
