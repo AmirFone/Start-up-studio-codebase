@@ -1,0 +1,32 @@
+.prescriptions {
+	margin-bottom: 40px;
+      }
+      
+      .prescriptions h2 {
+	font-size: 24px;
+	margin-bottom: 20px;
+	color: var(--rich-black);
+      }
+      
+      .prescription-card {
+	background-color: var(--light-gray);
+	padding: 20px;
+	border-radius: 10px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+      
+      .prescription-card ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+      }
+      
+      .prescription-card li {
+	font-size: 18px;
+	color: var(--rich-black);
+	margin-bottom: 10px;
+	padding: 10px;
+	background-color: var(--antiflash-white);
+	border-radius: 5px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+      }

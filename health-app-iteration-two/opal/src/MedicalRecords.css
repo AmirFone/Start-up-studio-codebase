@@ -1,0 +1,87 @@
+/* MedicalRecords.css */
+.medical-records {
+	margin-bottom: 40px;
+      }
+      
+      .medical-records h2 {
+	font-size: 24px;
+	margin-bottom: 20px;
+	color: var(--rich-black);
+      }
+      
+      .medical-records-card {
+	background-color: var(--antiflash-white);
+	border-radius: 10px;
+	padding: 30px;
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+      
+      .medical-records ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	gap: 20px;
+      }
+      
+      .medical-records li {
+	margin-bottom: 10px;
+      }
+      
+      .medical-records a {
+	display: flex;
+	align-items: center;
+	color: var(--rich-black);
+	text-decoration: none;
+	font-size: 18px;
+	transition: color 0.3s ease;
+      }
+      
+      .medical-records a:hover {
+	color: var(--tropical-indigo);
+      }
+      
+      .record-icon {
+	margin-right: 10px;
+	font-size: 24px;
+	color: var(--periwinkle);
+      }
+      
+      .upload-records,
+      .share-records {
+	margin-top: 30px;
+      }
+      
+      .upload-records h3,
+      .share-records h3 {
+	font-size: 20px;
+	margin-bottom: 10px;
+	color: var(--rich-black);
+      }
+      
+      .upload-records input[type="file"],
+      .share-records input[type="email"] {
+	display: block;
+	width: 100%;
+	padding: 10px;
+	border: 1px solid var(--periwinkle);
+	border-radius: 5px;
+	margin-bottom: 10px;
+      }
+      
+      .upload-records button,
+      .share-records button {
+	padding: 10px 20px;
+	background-color: var(--tropical-indigo);
+	color: var(--antiflash-white);
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+      }
+      
+      .upload-records button:hover,
+      .share-records button:hover {
+	background-color: var(--vista-blue);
+      }

@@ -1,0 +1,14 @@
+.health-timeline {
+	margin-bottom: 40px;
+      }
+      
+      .health-timeline h2 {
+	font-size: 24px;
+	margin-bottom: 20px;
+	color: var(--rich-black);
+      }
+      
+      .chart-container {
+	width: 100%;
+	height: 300px;
+      }

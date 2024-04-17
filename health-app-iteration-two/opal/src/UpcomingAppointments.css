@@ -1,0 +1,38 @@
+.upcoming-appointments {
+	margin-bottom: 40px;
+      }
+      
+      .upcoming-appointments h2 {
+	font-size: 24px;
+	margin-bottom: 20px;
+	color: var(--rich-black);
+      }
+      
+      .upcoming-appointments ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+      }
+      
+      .upcoming-appointments li {
+	margin-bottom: 20px;
+      }
+      
+      .appointment-info {
+	background-color: var(--light-gray);
+	padding: 20px;
+	border-radius: 10px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+      
+      .appointment-info h4 {
+	font-size: 20px;
+	margin-bottom: 10px;
+	color: var(--tropical-indigo);
+      }
+      
+      .appointment-info p {
+	font-size: 18px;
+	color: var(--rich-black);
+	margin-bottom: 5px;
+      }
