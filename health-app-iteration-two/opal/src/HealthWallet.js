@@ -40,10 +40,6 @@ function HealthWallet() {
       </div>
       <div className="wallet-cards">
         <div className="wallet-card">
-          <h3>88/120</h3>
-          <p>Health Score</p>
-        </div>
-        <div className="wallet-card">
           <h3>34+</h3>
           <p>Insurance Claims</p>
         </div>

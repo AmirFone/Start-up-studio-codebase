@@ -29,9 +29,9 @@ function Dashboard() {
           <UserProfile />
           <SearchHealthData />
           <HealthWallet />
+          <UpcomingAppointments />
           <MedicalRecords />
           <Prescriptions />
-          <UpcomingAppointments />
           <HealthTimeline />
           <VitalSigns />
         </main>

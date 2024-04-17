@@ -1,3 +1,4 @@
+/* UpcomingAppointments.css */
 .upcoming-appointments {
 	margin-bottom: 40px;
       }
@@ -8,31 +9,109 @@
 	color: var(--rich-black);
       }
       
-      .upcoming-appointments ul {
-	list-style: none;
-	padding: 0;
-	margin: 0;
+      .appointments-container {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	gap: 20px;
       }
       
-      .upcoming-appointments li {
+      .appointment-card {
+	background-color: var(--antiflash-white);
+	padding: 20px;
+	border-radius: 10px;
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+      
+      .appointment-header {
+	margin-bottom: 20px;
+      }
+      
+      .appointment-header h3 {
+	font-size: 20px;
+	margin-bottom: 5px;
+	color: var(--rich-black);
+      }
+      
+      .appointment-header p {
+	font-size: 16px;
+	color: var(--periwinkle);
+      }
+      
+      .appointment-details {
 	margin-bottom: 20px;
       }
       
       .appointment-info {
-	background-color: var(--light-gray);
-	padding: 20px;
-	border-radius: 10px;
-	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+	display: flex;
+	align-items: center;
+	margin-bottom: 10px;
       }
       
-      .appointment-info h4 {
-	font-size: 20px;
-	margin-bottom: 10px;
+      .appointment-info .icon {
+	margin-right: 10px;
 	color: var(--tropical-indigo);
       }
       
       .appointment-info p {
-	font-size: 18px;
+	font-size: 16px;
 	color: var(--rich-black);
-	margin-bottom: 5px;
+      }
+      
+      .appointment-actions {
+	display: flex;
+	justify-content: space-between;
+      }
+      
+      .reschedule-button,
+      .cancel-button {
+	padding: 10px 20px;
+	border: none;
+	border-radius: 5px;
+	font-size: 16px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+      }
+      
+      .reschedule-button {
+	background-color: var(--periwinkle);
+	color: var(--antiflash-white);
+      }
+      
+      .reschedule-button:hover {
+	background-color: var(--tropical-indigo);
+      }
+      
+      .cancel-button {
+	background-color: var(--vista-blue);
+	color: var(--antiflash-white);
+      }
+      
+      .cancel-button:hover {
+	background-color: var(--tropical-indigo);
+      }
+      
+      .add-appointment {
+	margin-top: 40px;
+	text-align: center;
+      }
+      
+      .add-appointment h3 {
+	font-size: 20px;
+	margin-bottom: 10px;
+	color: var(--rich-black);
+      }
+      
+      .add-appointment button {
+	padding: 10px 20px;
+	background-color: var(--tropical-indigo);
+	color: var(--antiflash-white);
+	border: none;
+	border-radius: 5px;
+	font-size: 16px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+      }
+      
+      .add-appointment button:hover {
+	background-color: var(--vista-blue);
       }
