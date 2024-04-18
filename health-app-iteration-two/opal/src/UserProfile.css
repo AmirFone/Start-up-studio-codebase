@@ -1,24 +1,116 @@
 .user-profile {
-	display: flex;
-	align-items: center;
+	background-color: var(--antiflash-white);
+	padding: 30px;
+	border-radius: 10px;
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 	margin-bottom: 40px;
       }
       
+      .profile-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 20px;
+      }
+      
       .user-avatar {
-	width: 80px;
-	height: 80px;
+	width: 120px;
+	height: 120px;
 	border-radius: 50%;
-	margin-right: 20px;
+	object-fit: cover;
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+      
+      .profile-actions {
+	display: flex;
+      }
+      
+      .edit-button,
+      .save-button,
+      .cancel-button {
+	display: flex;
+	align-items: center;
+	padding: 8px 12px;
+	border: none;
+	background-color: var(--tropical-indigo);
+	color: var(--antiflash-white);
+	font-size: 16px;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+	margin-left: 10px;
+      }
+      
+      .edit-button:hover,
+      .save-button:hover {
+	background-color: var(--vista-blue);
+      }
+      
+      .cancel-button {
+	background-color: var(--periwinkle);
+      }
+      
+      .cancel-button:hover {
+	background-color: var(--tropical-indigo);
+      }
+      
+      .edit-input {
+	width: 100%;
+	padding: 8px;
+	font-size: 18px;
+	border: 1px solid var(--periwinkle);
+	border-radius: 5px;
+	margin-bottom: 10px;
+      }
+      
+      .user-info {
+	margin-bottom: 20px;
       }
       
       .user-info h3 {
 	font-size: 24px;
-	margin-bottom: 5px;
 	color: var(--rich-black);
+	margin-bottom: 5px;
       }
       
       .user-info p {
 	font-size: 18px;
 	color: var(--periwinkle);
+      }
+      
+      .user-stats {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 20px;
+      }
+      
+      .stat-item {
+	text-align: center;
+      }
+      
+      .stat-item h4 {
+	font-size: 18px;
+	color: var(--rich-black);
+	margin-bottom: 5px;
+      }
+      
+      .stat-item p {
+	font-size: 16px;
+	color: var(--periwinkle);
+      }
+      
+      .user-bio {
+	margin-bottom: 20px;
+      }
+      
+      .user-bio h4 {
+	font-size: 20px;
+	color: var(--rich-black);
+	margin-bottom: 10px;
+      }
+      
+      .user-bio p {
+	font-size: 16px;
+	color: var(--periwinkle);
+	line-height: 1.5;
       }
