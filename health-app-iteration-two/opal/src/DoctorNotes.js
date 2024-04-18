@@ -33,7 +33,47 @@ function DoctorNotes() {
         'Perform monthly self-examinations of the skin',
       ],
     },
-    // ... more doctor notes
+    {
+      id: 3,
+      date: '2023-03-20',
+      doctor: 'Dr. Michael Johnson',
+      specialty: 'Endocrinologist',
+      hospital: 'Evergreen Medical Center',
+      notes: 'Patient diagnosed with type 2 diabetes. Prescribed metformin and discussed lifestyle modifications.',
+      recommendations: [
+        'Follow a low-carb, high-fiber diet',
+        'Engage in regular physical activity, at least 150 minutes per week',
+        'Monitor blood glucose levels regularly',
+        'Schedule a follow-up appointment in 3 months',
+      ],
+    },
+    {
+      id: 4,
+      date: '2023-02-25',
+      doctor: 'Dr. Sarah Wilson',
+      specialty: 'Orthopedist',
+      hospital: 'Pinnacle Orthopedic Clinic',
+      notes: 'Patient presented with knee pain and swelling. MRI revealed a torn meniscus. Recommended arthroscopic surgery.',
+      recommendations: [
+        'Schedule arthroscopic knee surgery',
+        'Use crutches and avoid weight-bearing activities until cleared',
+        'Attend physical therapy sessions post-surgery for rehabilitation',
+      ],
+    },
+    {
+      id: 5,
+      date: '2023-01-10',
+      doctor: 'Dr. David Lee',
+      specialty: 'Gastroenterologist',
+      hospital: 'Coastal Digestive Health Center',
+      notes: 'Patient reported symptoms of acid reflux and heartburn. Prescribed proton pump inhibitor and recommended dietary changes.',
+      recommendations: [
+        'Avoid trigger foods (e.g., spicy, fried, citrus foods)',
+        'Lose weight if overweight or obese',
+        'Avoid eating within 3 hours of bedtime',
+        'Schedule a follow-up appointment in 6 weeks',
+      ],
+    },
   ];
 
   const handleToggleNote = (noteId) => {

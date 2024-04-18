@@ -2,28 +2,9 @@
 import React from 'react';
 import './UpcomingAppointments.css';
 import { FaCalendarAlt, FaMapMarkerAlt, FaClock, FaNotesMedical } from 'react-icons/fa';
-
+import { appointments } from './fakeData/appointments';
 function UpcomingAppointments() {
-  const appointments = [
-    {
-      id: 1,
-      doctor: 'Dr. John Doe',
-      specialty: 'Cardiologist',
-      date: '12/06/2023',
-      time: '10:00 AM',
-      location: 'XYZ Hospital',
-      notes: 'Follow up on heart condition',
-    },
-    {
-      id: 2,
-      doctor: 'Dr. Jane Smith',
-      specialty: 'Dermatologist',
-      date: '15/07/2023',
-      time: '2:30 PM',
-      location: 'ABC Clinic',
-      notes: 'Annual skin check',
-    },
-  ];
+  // const appointments = appointments
 
   return (
     <section className="upcoming-appointments">

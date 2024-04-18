@@ -2,7 +2,6 @@
 import React, { useState } from 'react';
 import './TestReports.css';
 import { FaShare } from 'react-icons/fa';
-
 function TestReports() {
   const [sharedReportId, setSharedReportId] = useState(null);
 
@@ -33,7 +32,43 @@ function TestReports() {
         triglycerides: '150 mg/dL',
       },
     },
-    // ... more test reports
+    {
+      id: 3,
+      date: '2023-03-10',
+      testName: 'Thyroid Function Tests',
+      result: 'Abnormal',
+      notes: 'TSH levels slightly elevated. Repeat test in 6 months.',
+      details: {
+        tsh: '5.2 mIU/L',
+        t4: '1.1 ng/dL',
+        t3: '120 ng/dL',
+      },
+    },
+    {
+      id: 4,
+      date: '2023-02-01',
+      testName: 'Kidney Function Tests',
+      result: 'Normal',
+      notes: 'All kidney function parameters within normal range.',
+      details: {
+        bun: '18 mg/dL',
+        creatinine: '0.9 mg/dL',
+        gfr: '90 mL/min/1.73m²',
+      },
+    },
+    {
+      id: 5,
+      date: '2023-01-15',
+      testName: 'Liver Function Tests',
+      result: 'Borderline',
+      notes: 'Slightly elevated ALT levels. Recommend follow-up test.',
+      details: {
+        alt: '55 U/L',
+        ast: '30 U/L',
+        alkalinePhosphatase: '80 U/L',
+        bilirubinTotal: '0.8 mg/dL',
+      },
+    },
   ];
 
   const handleShareReport = (reportId) => {

@@ -1,7 +1,7 @@
 // ScansAndImages.js
 import React, { useState } from 'react';
 import './ScansAndImages.css';
-import { FaSearch, FaDownload } from 'react-icons/fa';
+import { FaDownload } from 'react-icons/fa';
 
 function ScansAndImages() {
   const [selectedImage, setSelectedImage] = useState(null);
@@ -25,7 +25,78 @@ function ScansAndImages() {
       doctor: 'Dr. Emily Davis',
       facility: 'Advanced Radiology Services',
     },
-    // ... more scans and images
+    {
+      id: 3,
+      date: '2023-03-20',
+      imageName: 'CT Scan',
+      imageUrl: 'https://via.placeholder.com/600x400.png?text=CT+Scan',
+      notes: 'CT scan of the abdomen and pelvis. No significant findings.',
+      doctor: 'Dr. Daniel Thompson',
+      facility: 'Radiology Associates',
+    },
+    {
+      id: 4,
+      date: '2023-02-15',
+      imageName: 'Mammogram',
+      imageUrl: 'https://via.placeholder.com/600x400.png?text=Mammogram',
+      notes: 'Routine screening mammogram. Benign findings.',
+      doctor: 'Dr. Sarah Wilson',
+      facility: 'Comprehensive Breast Care Center',
+    },
+    {
+      id: 5,
+      date: '2023-01-25',
+      imageName: 'Ultrasound',
+      imageUrl: 'https://via.placeholder.com/600x400.png?text=Ultrasound',
+      notes: 'Abdominal ultrasound. No abnormalities detected.',
+      doctor: 'Dr. David Lee',
+      facility: 'Imaging Specialists',
+    },
+    {
+      id: 6,
+      date: '2022-12-10',
+      imageName: 'PET Scan',
+      imageUrl: 'https://via.placeholder.com/600x400.png?text=PET+Scan',
+      notes: 'PET scan for cancer staging. Findings consistent with early-stage disease.',
+      doctor: 'Dr. Jessica Thompson',
+      facility: 'Oncology Imaging Center',
+    },
+    {
+      id: 7,
+      date: '2022-11-20',
+      imageName: 'Bone Density Scan',
+      imageUrl: 'https://via.placeholder.com/600x400.png?text=Bone+Density+Scan',
+      notes: 'Bone density scan. Results indicate osteopenia.',
+      doctor: 'Dr. Robert Anderson',
+      facility: 'Orthopedic Imaging Services',
+    },
+    {
+      id: 8,
+      date: '2022-10-05',
+      imageName: 'MRI Brain Scan',
+      imageUrl: 'https://via.placeholder.com/600x400.png?text=MRI+Brain+Scan',
+      notes: 'MRI of the brain. No significant abnormalities found.',
+      doctor: 'Dr. Emily Davis',
+      facility: 'Neuro Imaging Associates',
+    },
+    {
+      id: 9,
+      date: '2022-09-15',
+      imageName: 'Echocardiogram',
+      imageUrl: 'https://via.placeholder.com/600x400.png?text=Echocardiogram',
+      notes: 'Echocardiogram to evaluate heart function. Normal findings.',
+      doctor: 'Dr. Michael Johnson',
+      facility: 'Cardiology Diagnostics',
+    },
+    {
+      id: 10,
+      date: '2022-08-25',
+      imageName: 'Dental X-Ray',
+      imageUrl: 'https://via.placeholder.com/600x400.png?text=Dental+X-Ray',
+      notes: 'Routine dental x-rays. No cavities or concerns noted.',
+      doctor: 'Dr. Jennifer Brown',
+      facility: 'Smiles Dental Clinic',
+    },
   ];
 
   const handleImageClick = (imageUrl) => {

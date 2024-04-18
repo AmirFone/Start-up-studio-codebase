@@ -2,6 +2,8 @@
 import React, { useState } from 'react';
 import './Prescriptions.css';
 import { FaPlusCircle, FaMinusCircle, FaHistory } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
+
 
 function Prescriptions() {
   const [prescriptions, setPrescriptions] = useState([
@@ -54,7 +56,9 @@ function Prescriptions() {
             <FaHistory /> Prescription History
           </h3>
           <p>View your past prescriptions and medication history.</p>
-          <button>View History</button>
+          <Link to="/prescription-history">
+              <button>View History</button>
+          </Link>
         </div>
         <div className="prescription-refill">
           <h3>Refill Prescriptions</h3>

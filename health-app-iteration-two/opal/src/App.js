@@ -1,3 +1,4 @@
+//app.js
 import { React, useState, useEffect } from 'react';
 import './App.css';
 // import BackendDemo from './images/Backend_demo.mp4';
@@ -15,6 +16,7 @@ import DoctorNotes from './DoctorNotes';
 import ScansAndImages from './ScansAndImages';
 import LandingPageSection from './LandingPageSection';
 import landingPageImage from './images/landing_page_one.png';
+import PrescriptionHistory from './PrescriptionHistory';
 function App() {
 
   const [formData, setFormData] = useState({
@@ -96,17 +98,23 @@ function App() {
                   <div className="feature-card">
                     <h3>Secure Record Retrieval</h3>
                     <p>Access vital health information with ease and peace of mind. Discover the details that matter most to you, ensuring a seamless experience every time.</p>
+                    <Link to="/test-reports" style={{ textDecoration: 'none' }}>
                     <button>View Your Records</button>
+                    </Link>
                   </div>
                   <div className="feature-card">
                     <h3>Confidential Data Viewing</h3>
                     <p>Explore crucial medical details effortlessly while ensuring utmost privacy. Dive into the specifics that define your well-being, all in a secure environment.</p>
+                    <Link to="/scans-and-images" style={{ textDecoration: 'none' }}>
                     <button>Access Now</button>
+                    </Link>
                   </div>
                   <div className="feature-card">
                     <h3>Effortless Record Management</h3>
                     <p>Send essential health records with a single click, saving time and effort. Empower yourself by sharing vital data securely and efficiently.</p>
+                    <Link to="/prescription-history" style={{ textDecoration: 'none' }}>
                     <button>View Your Records</button>
+                    </Link>
                   </div>
                 </div>
               </section>
@@ -163,6 +171,7 @@ function App() {
           <Route path="/test-reports" element={<TestReports />} />
           <Route path="/doctor-notes" element={<DoctorNotes />} />
           <Route path="/scans-and-images" element={<ScansAndImages />} />
+          <Route path="/prescription-history" element={<PrescriptionHistory />} />
         </Routes>
       
         <footer>

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './SearchHealthData.css';
-import { fakeData } from './fakeData';
+import { fakeData } from './fakeData/fakeData';
 
 const searchQueries = [
   'Find a doctor or specialist',

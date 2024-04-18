@@ -3,7 +3,6 @@ import React from 'react';
 import './MedicalRecords.css';
 import { Link } from 'react-router-dom';
 import { FaFilePdf, FaNotesMedical, FaImage } from 'react-icons/fa';
-
 function MedicalRecords() {
   return (
     <section className="medical-records">

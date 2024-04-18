@@ -1,0 +1,30 @@
+.prescription-history {
+	padding: 20px;
+      }
+      
+      .prescription-history h2 {
+	font-size: 24px;
+	margin-bottom: 20px;
+	color: var(--rich-black);
+      }
+      
+      .prescription-history table {
+	width: 100%;
+	border-collapse: collapse;
+      }
+      
+      .prescription-history th,
+      .prescription-history td {
+	padding: 10px;
+	text-align: left;
+	border-bottom: 1px solid var(--periwinkle);
+      }
+      
+      .prescription-history th {
+	background-color: var(--tropical-indigo);
+	color: var(--antiflash-white);
+      }
+      
+      .prescription-history tr:hover {
+	background-color: var(--light-gray);
+      }
