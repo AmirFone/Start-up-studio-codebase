@@ -17,12 +17,12 @@ function Dashboard() {
       <div className="dashboard-container">
         <Sidebar /> {/* Add the Sidebar component */}
         <main className="dashboard-content">
-          <UserProfile />
           <SearchHealthData />
           <HealthWallet />
-          <UpcomingAppointments />
+          <UserProfile />
           <MedicalRecords />
           <Prescriptions />
+          <UpcomingAppointments />
           <HealthTimeline />
           <VitalSigns />
         </main>

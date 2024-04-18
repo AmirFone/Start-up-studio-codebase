@@ -10,6 +10,9 @@ import Contact from './Contact';
 import AboutUs from './AboutUs';
 import MailchimpModal from './MailchimpModal';
 import Dashboard from './Dashboard';
+import TestReports from './TestReports';
+import DoctorNotes from './DoctorNotes';
+import ScansAndImages from './ScansAndImages';
 function App() {
 
   const [formData, setFormData] = useState({
@@ -167,6 +170,9 @@ function App() {
           <Route path="/insurance-info" element={<InsuranceInfo />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/Dashboard" element={<Dashboard />} />
+          <Route path="/test-reports" element={<TestReports />} />
+          <Route path="/doctor-notes" element={<DoctorNotes />} />
+          <Route path="/scans-and-images" element={<ScansAndImages />} />
         </Routes>
       
         <footer>

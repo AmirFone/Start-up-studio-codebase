@@ -1,0 +1,29 @@
+.doctor-notes {
+	padding: 20px;
+      }
+      
+      .note-card {
+	background-color: var(--antiflash-white);
+	padding: 20px;
+	border-radius: 10px;
+	margin-bottom: 20px;
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+      
+      .note-header {
+	margin-bottom: 10px;
+      }
+      
+      .note-header h3 {
+	font-size: 20px;
+	color: var(--rich-black);
+      }
+      
+      .note-header p {
+	font-size: 16px;
+	color: var(--periwinkle);
+      }
+      
+      .note-content p {
+	margin-bottom: 5px;
+      }

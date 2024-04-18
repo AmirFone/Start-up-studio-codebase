@@ -1,0 +1,29 @@
+.scans-and-images {
+	padding: 20px;
+      }
+      
+      .image-card {
+	background-color: var(--antiflash-white);
+	padding: 20px;
+	border-radius: 10px;
+	margin-bottom: 20px;
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+      
+      .image-card img {
+	width: 100%;
+	height: auto;
+	margin-bottom: 10px;
+      }
+      
+      .image-details h3 {
+	font-size: 20px;
+	color: var(--rich-black);
+	margin-bottom: 5px;
+      }
+      
+      .image-details p {
+	font-size: 16px;
+	color: var(--periwinkle);
+	margin-bottom: 5px;
+      }
