@@ -14,7 +14,7 @@ import TestReports from './TestReports';
 import DoctorNotes from './DoctorNotes';
 import ScansAndImages from './ScansAndImages';
 import LandingPageSection from './LandingPageSection';
-import landingPageImage from './images/landing_page.png';
+import landingPageImage from './images/landing_page_one.png';
 function App() {
 
   const [formData, setFormData] = useState({
