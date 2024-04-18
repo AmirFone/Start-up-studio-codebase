@@ -114,3 +114,15 @@
 	color: var(--periwinkle);
 	line-height: 1.5;
       }
+      /* UserProfile.css */
+.user-avatar {
+	width: 100px; /* Adjust size as needed */
+	height: 100px; /* Should be the same as width to create a circle */
+	border-radius: 50%; /* Makes the div circular */
+	background-image: url('./images/avatar.jpg'); /* Sets the image as a background */
+	background-size: cover; /* Ensures the image covers the entire area of the div */
+	background-position: center; /* Centers the image within the div */
+	display: block;
+	margin: 0 auto; /* Centers the div horizontally if needed */
+      }
+      
