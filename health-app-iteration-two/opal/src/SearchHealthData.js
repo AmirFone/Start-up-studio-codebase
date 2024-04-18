@@ -1,50 +1,40 @@
-// SearchHealthData.js
 import React, { useState, useEffect } from 'react';
 import './SearchHealthData.css';
+import { fakeData } from './fakeData';
 
 const searchQueries = [
-  'Find a doctor',
-  'Check symptoms',
-  'Locate nearby pharmacies',
-  'Review test results',
-];
-
-const fakeData = [
-  { id: 1, title: 'Dr. John Doe', category: 'Cardiologist' },
-  { id: 2, title: 'Headache', category: 'Symptom' },
-  { id: 3, title: 'XYZ Pharmacy', category: 'Pharmacy' },
-  { id: 4, title: 'Blood Test Results', category: 'Test Results' },
-  { id: 5, title: 'Dr. Jane Smith', category: 'Dermatologist' },
-  { id: 6, title: 'Fever', category: 'Symptom' },
-  { id: 7, title: 'ABC Pharmacy', category: 'Pharmacy' },
-  { id: 8, title: 'MRI Scan Report', category: 'Test Results' },
+  'Find a doctor or specialist',
+  'Check common symptoms online',
+  'Locate nearby pharmacies easily',
+  'Review your latest test results',
 ];
 
 function SearchHealthData() {
   const [searchQuery, setSearchQuery] = useState('');
   const [searchResults, setSearchResults] = useState([]);
-  const [defaultText, setDefaultText] = useState('');
+  const [placeholderText, setPlaceholderText] = useState('');
+  const [placeholderOpacity, setPlaceholderOpacity] = useState(1);
 
   useEffect(() => {
     const timer = setInterval(() => {
-      const randomIndex = Math.floor(Math.random() * searchQueries.length);
-      setDefaultText(searchQueries[randomIndex]);
-    }, 3000);
+      setPlaceholderOpacity(0);
+      setTimeout(() => {
+        const randomIndex = Math.floor(Math.random() * searchQueries.length);
+        setPlaceholderText(searchQueries[randomIndex]);
+        setPlaceholderOpacity(1);
+      }, 500);
+    }, 4000);
 
-    return () => {
-      clearInterval(timer);
-    };
+    return () => clearInterval(timer);
   }, []);
 
   const handleSearch = (e) => {
     const query = e.target.value;
     setSearchQuery(query);
-
     if (query.trim() !== '') {
       const results = fakeData.filter(
-        (item) =>
-          item.title.toLowerCase().includes(query.toLowerCase()) ||
-          item.category.toLowerCase().includes(query.toLowerCase())
+        item => item.title.toLowerCase().includes(query.toLowerCase()) ||
+                item.category.toLowerCase().includes(query.toLowerCase())
       );
       setSearchResults(results);
     } else {
@@ -58,9 +48,12 @@ function SearchHealthData() {
       <div className="search-input-container">
         <input
           type="text"
-          placeholder={defaultText}
+          aria-label="Search"
+          placeholder={placeholderText}
           value={searchQuery}
           onChange={handleSearch}
+          className="search-input"
+          style={{opacity: placeholderOpacity}}
         />
         {searchResults.length > 0 && (
           <ul className="search-results">
