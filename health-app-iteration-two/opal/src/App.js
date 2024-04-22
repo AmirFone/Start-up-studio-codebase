@@ -18,6 +18,7 @@ import ScansAndImages from './ScansAndImages';
 import LandingPageSection from './LandingPageSection';
 import landingPageImage from './images/landing_page_one.png';
 import PrescriptionHistory from './PrescriptionHistory';
+import HealthcareProviders from './HealthcareProviders';
 function App() {
 
   const [formData, setFormData] = useState({
@@ -181,6 +182,7 @@ function App() {
           <Route path="/doctor-notes" element={<DoctorNotes />} />
           <Route path="/scans-and-images" element={<ScansAndImages />} />
           <Route path="/prescription-history" element={<PrescriptionHistory />} />
+          <Route path="/healthcare-providers" element={<HealthcareProviders />} />
         </Routes>
       
         <footer>
