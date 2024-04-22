@@ -1,5 +1,5 @@
 import React from 'react';
-import './PrescriptionHistory.css';
+import './Style-sheets/PrescriptionHistory.css';
 import { prescriptionHistory } from './fakeData/prescriptionHistory';
 
 function PrescriptionHistory() {

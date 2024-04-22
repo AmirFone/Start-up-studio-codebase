@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './SearchHealthData.css';
+import './Style-sheets/SearchHealthData.css';
 import { fakeData } from './fakeData/fakeData';
 
 const searchQueries = [

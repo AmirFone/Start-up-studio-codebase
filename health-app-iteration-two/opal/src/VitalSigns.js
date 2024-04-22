@@ -1,5 +1,5 @@
 import React from 'react';
-import './VitalSigns.css';
+import './Style-sheets/VitalSigns.css';
 import { Line } from 'react-chartjs-2';
 
 function VitalSigns() {

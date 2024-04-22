@@ -1,5 +1,5 @@
 import React from 'react';
-import './AboutUs.css';
+import './Style-sheets/AboutUs.css';
 import person from './images/Humaaans.png';
 import amir from './images/amir.png';
 import divya from './images/divya.png';

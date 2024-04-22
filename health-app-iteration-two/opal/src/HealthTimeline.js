@@ -1,5 +1,5 @@
 import React from 'react';
-import './HealthTimeline.css';
+import './Style-sheets/HealthTimeline.css';
 import { Line } from 'react-chartjs-2';
 import { Chart, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend } from 'chart.js';
 

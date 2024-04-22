@@ -1,6 +1,6 @@
 // Prescriptions.js
 import React, { useState } from 'react';
-import './Prescriptions.css';
+import './Style-sheets/Prescriptions.css';
 import { FaPlusCircle, FaMinusCircle, FaHistory } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 

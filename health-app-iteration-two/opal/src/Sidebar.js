@@ -1,7 +1,7 @@
 // Sidebar.js
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import './Sidebar.css';
+import './Style-sheets/Sidebar.css';
 import {
   FaHome,
   FaWallet,

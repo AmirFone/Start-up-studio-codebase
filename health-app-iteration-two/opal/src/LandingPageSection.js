@@ -1,5 +1,5 @@
 import React from 'react';
-import './LandingPageSection.css';
+import './Style-sheets/LandingPageSection.css';
 import { Link } from 'react-router-dom';
 
 function LandingPageSection({ image, width = '100%', height = 'auto' }) {

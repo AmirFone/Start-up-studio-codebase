@@ -1,6 +1,6 @@
 // MedicalRecords.js
 import React from 'react';
-import './MedicalRecords.css';
+import './Style-sheets/MedicalRecords.css';
 import { Link } from 'react-router-dom';
 import { FaFilePdf, FaNotesMedical, FaImage } from 'react-icons/fa';
 function MedicalRecords() {

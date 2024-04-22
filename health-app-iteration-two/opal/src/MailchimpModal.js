@@ -1,6 +1,6 @@
 // MailchimpModal.js
 import React from 'react';
-import './MailchimpModal.css';
+import './Style-sheets/MailchimpModal.css';
 
 const MailchimpModal = ({ isOpen, onClose }) => {
   if (!isOpen) return null;

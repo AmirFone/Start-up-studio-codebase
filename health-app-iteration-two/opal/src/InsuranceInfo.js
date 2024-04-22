@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './InsuranceInfo.css';
+import './Style-sheets/InsuranceInfo.css';
 import { useNavigate } from 'react-router-dom';
 import Upload from './images/Upload.png';
 

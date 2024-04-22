@@ -1,6 +1,6 @@
 // ScansAndImages.js
 import React, { useState } from 'react';
-import './ScansAndImages.css';
+import './Style-sheets/ScansAndImages.css';
 import { FaDownload } from 'react-icons/fa';
 
 function ScansAndImages() {

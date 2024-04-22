@@ -1,6 +1,6 @@
 // MailingListModal.js
 import React, { useState } from 'react';
-import './MailingListModal.css';
+import './Style-sheets/MailingListModal.css';
 
 const MailingListModal = ({ isOpen, onClose, onSubmit }) => {
   const [email, setEmail] = useState('');

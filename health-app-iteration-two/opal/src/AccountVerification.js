@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import React from 'react';
-import './AccountVerification.css';
+import './Style-sheets/AccountVerification.css';
 // import InsuranceInfo from './InsuranceInfo';
 function AccountVerification() {
 

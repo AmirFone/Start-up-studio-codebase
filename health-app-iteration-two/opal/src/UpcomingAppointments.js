@@ -1,6 +1,6 @@
 // UpcomingAppointments.js
 import React from 'react';
-import './UpcomingAppointments.css';
+import './Style-sheets/UpcomingAppointments.css';
 import { FaCalendarAlt, FaMapMarkerAlt, FaClock, FaNotesMedical } from 'react-icons/fa';
 import { appointments } from './fakeData/appointments';
 function UpcomingAppointments() {

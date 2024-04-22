@@ -1,6 +1,6 @@
 // Dashboard.js
 import React from 'react';
-import './Dashboard.css';
+import './Style-sheets/Dashboard.css';
 import UserProfile from './UserProfile';
 import HealthWallet from './HealthWallet';
 import MedicalRecords from './MedicalRecords';

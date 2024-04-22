@@ -1,7 +1,7 @@
 //app.js
 import { React, useState, useEffect } from 'react';
 import { FaLinkedin } from 'react-icons/fa'; 
-import './App.css';
+import './Style-sheets/App.css';
 // import BackendDemo from './images/Backend_demo.mp4';
 import linkedInIcon from './images/linkedin.png';
 import SignUp from './SignUp';

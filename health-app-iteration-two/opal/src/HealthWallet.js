@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './HealthWallet.css';
+import './Style-sheets/HealthWallet.css';
 import WalletCard from './images/wallet_card.png';
 import { IoShareSocial } from 'react-icons/io5';
 import { FaRegClipboard } from 'react-icons/fa'; // For the clipboard icon

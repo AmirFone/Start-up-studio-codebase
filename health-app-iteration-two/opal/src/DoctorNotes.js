@@ -1,6 +1,6 @@
 // DoctorNotes.js
 import React, { useState } from 'react';
-import './DoctorNotes.css';
+import './Style-sheets/DoctorNotes.css';
 import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
 
 function DoctorNotes() {

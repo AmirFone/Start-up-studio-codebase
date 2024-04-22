@@ -1,6 +1,6 @@
 // UserProfile.js
 import React, { useState } from 'react';
-import './UserProfile.css';
+import './Style-sheets/UserProfile.css';
 import Avatar from './images/avatar.jpg';
 import { FaEdit, FaCheck, FaTimes } from 'react-icons/fa';
 
