@@ -1,0 +1,149 @@
+/* ShareRecords.css */
+
+.ShareRecords {
+	text-align: center;
+      }
+      
+      .share-records-header {
+	background-color: var(--periwinkle);
+	padding: 60px 0;
+	color: var(--antiflash-white);
+      }
+      
+      .share-records-header h1 {
+	font-size: 36px;
+      }
+      
+      .share-records-main {
+	max-width: 800px;
+	margin: 0 auto;
+	padding: 60px 20px;
+      }
+      
+      .share-records-info,
+      .share-records-guidelines {
+	text-align: left;
+	margin-bottom: 60px;
+      }
+      
+      .share-records-info h2,
+      .share-records-guidelines h2 {
+	font-size: 28px;
+	margin-bottom: 20px;
+	color: var(--rich-black);
+      }
+      
+      .share-records-info ol,
+      .share-records-guidelines ul {
+	font-size: 18px;
+	line-height: 1.6;
+	padding-left: 30px;
+      }
+      
+      .share-records-info ol li,
+      .share-records-guidelines ul li {
+	margin-bottom: 10px;
+      }
+      
+      .share-records-cta {
+	background-color: var(--vista-blue);
+	padding: 60px 0;
+	color: var(--antiflash-white);
+      }
+      
+      .share-records-cta h2 {
+	font-size: 32px;
+	margin-bottom: 20px;
+      }
+      
+      .share-records-cta p {
+	font-size: 20px;
+	margin-bottom: 30px;
+      }
+      
+      .cta-button {
+	display: inline-block;
+	background-color: var(--tropical-indigo);
+	color: var(--antiflash-white);
+	padding: 15px 30px;
+	font-size: 18px;
+	text-decoration: none;
+	border-radius: 5px;
+	transition: background-color 0.3s ease;
+      }
+      
+      .cta-button:hover {
+	background-color: var(--periwinkle);
+      }
+
+
+      /* ShareRecords.css */
+
+/* ... Previous CSS styles ... */
+
+.share-records-form {
+	margin-bottom: 60px;
+      }
+      
+      .share-records-form h2 {
+	font-size: 28px;
+	margin-bottom: 20px;
+	color: var(--rich-black);
+      }
+      
+      .form-group {
+	margin-bottom: 20px;
+	text-align: left;
+      }
+      
+      .form-group label {
+	display: block;
+	font-size: 18px;
+	margin-bottom: 10px;
+	color: var(--rich-black);
+      }
+      
+      .record-list {
+	list-style: none;
+	padding: 0;
+      }
+      
+      .record-list li {
+	margin-bottom: 10px;
+      }
+      
+      .form-group input[type='email'],
+      .form-group select {
+	width: 100%;
+	padding: 10px;
+	font-size: 16px;
+	border: 1px solid var(--periwinkle);
+	border-radius: 5px;
+      }
+      
+      .form-group select {
+	appearance: none;
+	background-color: var(--antiflash-white);
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23000'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+	background-repeat: no-repeat;
+	background-position: right 10px center;
+	background-size: 20px;
+	padding-right: 30px;
+      }
+      
+      button[type='submit'] {
+	display: block;
+	width: 100%;
+	padding: 12px;
+	font-size: 18px;
+	background-color: var(--tropical-indigo);
+	color: var(--antiflash-white);
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+      }
+      
+      button[type='submit']:hover {
+	background-color: var(--vista-blue);
+      }

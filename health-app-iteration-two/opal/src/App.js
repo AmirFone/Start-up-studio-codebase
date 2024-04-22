@@ -19,6 +19,7 @@ import LandingPageSection from './LandingPageSection';
 import landingPageImage from './images/landing_page_one.png';
 import PrescriptionHistory from './PrescriptionHistory';
 import HealthcareProviders from './HealthcareProviders';
+import ShareRecords from './ShareRecords';
 import SignIn from './SignIn';
 function App() {
 
@@ -185,6 +186,7 @@ function App() {
           <Route path="/prescription-history" element={<PrescriptionHistory />} />
           <Route path="/healthcare-providers" element={<HealthcareProviders />} />
           <Route path="/signin" element={<SignIn />} />
+          <Route path="/share-records" element={<ShareRecords />} />
         </Routes>
       
         <footer>

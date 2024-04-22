@@ -35,8 +35,9 @@ function MedicalRecords() {
         </div>
         <div className="share-records">
           <h3>Share Records</h3>
-          <input type="email" placeholder="Enter email address" />
-          <button>Share</button>
+          <Link to="/share-records">
+            <button>Learn More</button>
+          </Link>
         </div>
       </div>
     </section>
