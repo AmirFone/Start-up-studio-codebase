@@ -1,5 +1,6 @@
 //app.js
 import { React, useState, useEffect } from 'react';
+import { FaLinkedin } from 'react-icons/fa'; 
 import './App.css';
 // import BackendDemo from './images/Backend_demo.mp4';
 import linkedInIcon from './images/linkedin.png';
@@ -69,19 +70,26 @@ function App() {
       <div className="App">
       <header>
         <nav>
-          <span><Link to="/" style={{ textDecoration: 'none' }}>opal</Link></span>
+          <div className="brand-container">
+            <span><Link to="/" style={{ textDecoration: 'none' }}>opal</Link></span>
+            <span className="tagline">is the digital wallet for your health</span>
+          </div>
           <ul>
             <li><Link to="/signup" className="nav-link">Sign up</Link></li>
+            <li><Link to="/signin" className="nav-link">Sign in</Link></li>
+            <li><Link to="/healthcare-providers" className="nav-link">Healthcare Providers</Link></li>
             <li><Link to="/about-us" className="nav-link">About Us</Link></li>
             <li><Link to="/contact" className="nav-link">Contact</Link></li>
             <li>
               <a href="https://www.linkedin.com/company/opalwallet/about/" target="_blank" rel="noopener noreferrer">
-              <img src={linkedInIcon} alt="LinkedIn" width="50" height="50" />
+              <img src={linkedInIcon} alt="LinkedIn" style={{ verticalAlign: 'middle' }} width="50" height="50" />
               </a>
             </li>
           </ul>
         </nav>
       </header>
+
+
         <Routes>
           <Route exact path="/" element={
             <main>
@@ -93,72 +101,73 @@ function App() {
                 </Link>
               </section>
               <section className="features">
-                <h2>Personalized Medical Records Access</h2>
-                <div className="feature-cards">
-                  <div className="feature-card">
-                    <h3>Secure Record Retrieval</h3>
-                    <p>Access vital health information with ease and peace of mind. Discover the details that matter most to you, ensuring a seamless experience every time.</p>
-                    <Link to="/test-reports" style={{ textDecoration: 'none' }}>
-                    <button>View Your Records</button>
-                    </Link>
+                  <h2>Personalized Medical Records Access</h2>
+                  <div className="feature-cards">
+                    <div className="feature-card">
+                      <h3>Access your health history</h3>
+                      <p>Access vital health information with ease and peace of mind. Discover the details that matter most to you, ensuring a seamless experience every time.</p>
+                      <Link to="/test-reports" style={{ textDecoration: 'none' }}>
+                        <button>View Your Records</button>
+                      </Link>
+                    </div>
+                    <div className="feature-card">
+                      <h3>Confidential Data Viewing</h3>
+                      <p>Explore crucial medical details effortlessly while ensuring utmost privacy. Dive into the specifics that define your well-being, all in a secure environment.</p>
+                      <Link to="/scans-and-images" style={{ textDecoration: 'none' }}>
+                        <button>Access Now</button>
+                      </Link>
+                    </div>
+                    <div className="feature-card">
+                      <h3>Access your health history</h3>
+                      <p>Send essential health records with a single click, saving time and effort. Empower yourself by sharing vital data securely and efficiently.</p>
+                      <Link to="/prescription-history" style={{ textDecoration: 'none' }}>
+                        <button>View Your Records</button>
+                      </Link>
+                    </div>
                   </div>
-                  <div className="feature-card">
-                    <h3>Confidential Data Viewing</h3>
-                    <p>Explore crucial medical details effortlessly while ensuring utmost privacy. Dive into the specifics that define your well-being, all in a secure environment.</p>
-                    <Link to="/scans-and-images" style={{ textDecoration: 'none' }}>
-                    <button>Access Now</button>
-                    </Link>
-                  </div>
-                  <div className="feature-card">
-                    <h3>Effortless Record Management</h3>
-                    <p>Send essential health records with a single click, saving time and effort. Empower yourself by sharing vital data securely and efficiently.</p>
-                    <Link to="/prescription-history" style={{ textDecoration: 'none' }}>
-                    <button>View Your Records</button>
-                    </Link>
-                  </div>
-                </div>
-              </section>
+                </section>
+
               <section className="cta">
               <LandingPageSection image={landingPageImage} />
             </section>
-              <section className="form-section">
-                <div className="form-content">
-                  <h2>Access your medical records</h2>
-                  <p>Discover the power of having your health information at your fingertips. Explore your medical history, lab results, and more with ease. Take control of your healthcare journey today.</p>
-                </div>
-                <div className="form-container">
-          <form onSubmit={handleSubmit}>
-            <input
-              type="text"
-              placeholder="First Name"
-              name="firstName"
-              value={formData.firstName}
-              onChange={handleInputChange}
-            />
-            <input
-              type="text"
-              placeholder="Last Name"
-              name="lastName"
-              value={formData.lastName}
-              onChange={handleInputChange}
-            />
-            <input
-              type="email"
-              placeholder="Email"
-              name="email"
-              value={formData.email}
-              onChange={handleInputChange}
-            />
-            <textarea
-              placeholder="Comment or Message"
-              name="message"
-              value={formData.message}
-              onChange={handleInputChange}
-            ></textarea>
-            <button type="submit">Submit</button>
-          </form>
-        </div>              
-        </section>
+            <section className="form-section">
+              <div className="form-content">
+                <h2>Healthcare Provider Access</h2>
+                <p>Seamlessly manage your patients’ health records and enhance your medical services. Access comprehensive patient histories, lab results, and more to provide informed care.</p>
+              </div>
+              <div className="form-container">
+                <form onSubmit={handleSubmit}>
+                  <input
+                    type="text"
+                    placeholder="Clinic Name"
+                    name="clinicName"
+                    value={formData.clinicName}
+                    onChange={handleInputChange}
+                  />
+                  <input
+                    type="text"
+                    placeholder="Provider Name"
+                    name="providerName"
+                    value={formData.providerName}
+                    onChange={handleInputChange}
+                  />
+                  <input
+                    type="email"
+                    placeholder="Provider Email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                  />
+                  <textarea
+                    placeholder="Comments or Inquiries"
+                    name="message"
+                    value={formData.message}
+                    onChange={handleInputChange}
+                  ></textarea>
+                  <button type="submit">Submit Request</button>
+                </form>
+              </div>              
+            </section>
    
             </main>         
            } />
@@ -175,21 +184,28 @@ function App() {
         </Routes>
       
         <footer>
-        <div className="footer-info">
-          <div>
-            <h4>Location</h4>
-            <p>1 East Loop rd<br/>New York, NY 12345</p>
+          <div className="footer-info">
+            <div>
+              <h4>Location</h4>
+              <p>1 East Loop rd<br/>New York, NY 12345</p>
+            </div>
+            <div>
+              <h4>Hours</h4>
+              <p>Monday — Friday<br/>6:30am — 11pm</p>  
+            </div>
+            <div>
+              <h4>Contact</h4>
+              <p>email@cornell.edu<br/>(555) 555-5555</p>
+            </div>
+            <div>
+              <h4>Follow Us</h4>
+              <a href="https://www.linkedin.com/company/opalwallet/about/" target="_blank" rel="noopener noreferrer">
+                <FaLinkedin size={30} style={{ color: 'var(--tropical-indigo)' }} />
+              </a>
+            </div>
           </div>
-          <div>
-            <h4>Hours</h4>
-            <p>Monday — Friday<br/>6:30am — 11pm</p>  
-          </div>
-          <div>
-            <h4>Contact</h4>
-            <p>email@cornell.edu<br/>(555) 555-5555</p>
-          </div>
-        </div>
-      </footer>
+        </footer>
+
       </div>
 
     </Router>

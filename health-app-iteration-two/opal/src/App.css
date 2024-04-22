@@ -245,14 +245,16 @@ nav ul {
 .form-container input,
 .form-container textarea {
   display: block;
-  width: calc(100% - 30px); /* Accounts for padding */
-  margin-bottom: 20px; /* Reduces space for a tighter form */
+  width: calc(100% - 30px); /* Adjusts width accounting for padding */
+  margin-bottom: 20px; /* Space between form fields */
   padding: 15px;
-  border: 1px solid var(--periwinkle); /* Adds border to inputs for a cohesive look */
-  border-radius: 5px; /* Slightly round the edges of the input fields */
+  border: none; /* Removes borders as requested */
+  border-radius: 5px; /* Maintains rounded edges for aesthetic */
   font-size: 20px;
-  background-color: #FFFFFF; /* Ensures input fields stand out as white */
+  background-color: #FFFFFF; /* Ensures background color is white */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow instead of a border */
 }
+
 
 .form-container textarea {
   height: 120px; /* Sets a fixed height for the textarea */
@@ -272,7 +274,7 @@ nav ul {
 }
 
 .form-container button:hover {
-  background-color: var(--vista-blue); /* Changes button color on hover */
+  background-color: var(--vista-blue); /* Lighter shade for hover state */
 }
 
 @keyframes glow {
@@ -367,6 +369,97 @@ footer {
         height: auto;
         display: block;
       }
+      nav ul {
+        list-style: none;
+        display: flex;
+        align-items: center; /* Ensures vertical alignment for all items including images */
+        gap: 30px;
+        font-size: 20px;
+      }
+      
+      .nav-link {
+        text-decoration: none; /* Removes underlining */
+        color: inherit; /* Inherits the text color from the parent element */
+        padding: 10px 20px; /* Optional: Adds padding for better touch targets */
+        border-radius: 5px; /* Optional: Rounds the corners of the clickable area */
+        transition: background-color 0.3s ease; /* Smooth background color transition on hover */
+      }
+      
+      .nav-link:hover {
+        background-color: var(--vista-blue); /* Changes background on hover */
+      }
+
+      .brand-container {
+        display: flex;
+        align-items: center; /* Centers the items vertically */
+        gap: 10px; /* Adds space between the brand name and tagline */
+      }
+      
+      .tagline {
+        font-size: 10px; /* Smaller font size than the brand name */
+        color: var(--light-gray); /* Assuming white is readable on your header's background */
+        font-style: italic; /* Optional: italicize the tagline */
+      }
+      
+      nav span {
+        font-size: 32px; /* Ensure your brand name stands out */
+        font-weight: bold;
+        color: var(--tropical-indigo);
+      }
+      
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: var(--rich-black);
+      }
+      
+      nav ul {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        font-size: 20px;
+      }
+      
+      .feature-card button {
+        display: block; /* Makes the button a block element which allows it to be centered */
+        margin: 20px auto; /* Centers the button horizontally within the card */
+        background-color: var(--tropical-indigo);
+        color: var(--antiflash-white);
+        border: none;
+        padding: 15px 30px;
+        font-size: 20px;
+        font-weight: bold; /* Ensures the text on the button is bold */
+        cursor: pointer;
+        border-radius: 5px; /* Rounds the button edges */
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow to the button */
+        transition: background-color 0.3s ease; /* Smooth background color transition */
+      }
+      
+      .feature-card button:hover {
+        background-color: var(--vista-blue); /* Changes button color on hover for a visual feedback */
+      }
+      
+      .feature-cards {
+        display: flex;
+        justify-content: space-between;
+        gap: 30px;
+      }
+      
+      .feature-card {
+        flex: 1;
+        background-color: var(--antiflash-white);
+        padding: 30px;
+        border-radius: 10px;
+        position: relative; /* Ensures the card is properly positioned */
+        overflow: hidden; /* Keeps the shadow within the card's border-radius */
+        transition: transform 0.3s ease-in-out, border 0.3s ease-in-out; /* Smooth transition for hover effects */
+        border: 2px solid var(--tropical-indigo); /* Initial border color */
+        text-align: center; /* Centers the text and the button inside the card */
+      }
+            
 
 
 
+      
