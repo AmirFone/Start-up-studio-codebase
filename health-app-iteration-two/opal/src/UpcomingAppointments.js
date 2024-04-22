@@ -3,6 +3,7 @@ import React from 'react';
 import './Style-sheets/UpcomingAppointments.css';
 import { FaCalendarAlt, FaMapMarkerAlt, FaClock, FaNotesMedical } from 'react-icons/fa';
 import { appointments } from './fakeData/appointments';
+import { Link } from 'react-router-dom';
 function UpcomingAppointments() {
   // const appointments = appointments
 
@@ -43,7 +44,9 @@ function UpcomingAppointments() {
       </div>
       <div className="add-appointment">
         <h3>Schedule a New Appointment</h3>
-        <button>Book Appointment</button>
+        <Link to="/book-appointment">
+          <button>Book Appointment</button>
+        </Link>
       </div>
     </section>
   );

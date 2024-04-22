@@ -21,6 +21,7 @@ import PrescriptionHistory from './PrescriptionHistory';
 import HealthcareProviders from './HealthcareProviders';
 import ShareRecords from './ShareRecords';
 import SignIn from './SignIn';
+import BookAppointment from './BookAppointment';
 function App() {
 
   const [formData, setFormData] = useState({
@@ -187,6 +188,7 @@ function App() {
           <Route path="/healthcare-providers" element={<HealthcareProviders />} />
           <Route path="/signin" element={<SignIn />} />
           <Route path="/share-records" element={<ShareRecords />} />
+          <Route path="/book-appointment" element={<BookAppointment />} />
         </Routes>
       
         <footer>

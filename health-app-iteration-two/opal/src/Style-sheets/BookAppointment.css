@@ -1,0 +1,101 @@
+/* BookAppointment.css */
+
+.BookAppointment {
+	text-align: center;
+      }
+      
+      .book-appointment-header {
+	background-color: var(--periwinkle);
+	padding: 60px 0;
+	color: var(--antiflash-white);
+      }
+      
+      .book-appointment-header h1 {
+	font-size: 36px;
+      }
+      
+      .book-appointment-main {
+	max-width: 800px;
+	margin: 0 auto;
+	padding: 60px 20px;
+      }
+      
+      .book-appointment-form {
+	margin-bottom: 60px;
+      }
+      
+      .form-group {
+	margin-bottom: 20px;
+	text-align: left;
+      }
+      
+      .form-group label {
+	display: block;
+	font-size: 18px;
+	margin-bottom: 10px;
+	color: var(--rich-black);
+      }
+      
+      .form-group select,
+      .form-group input[type='date'] {
+	width: 100%;
+	padding: 10px;
+	font-size: 16px;
+	border: 1px solid var(--periwinkle);
+	border-radius: 5px;
+      }
+      
+      button[type='submit'] {
+	display: block;
+	width: 100%;
+	padding: 12px;
+	font-size: 18px;
+	background-color: var(--tropical-indigo);
+	color: var(--antiflash-white);
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+      }
+      
+      button[type='submit']:hover {
+	background-color: var(--vista-blue);
+      }
+      
+      .book-appointment-info {
+	margin-bottom: 60px;
+      }
+      
+      .book-appointment-info h2 {
+	font-size: 28px;
+	margin-bottom: 20px;
+	color: var(--rich-black);
+      }
+      
+      .book-appointment-info p {
+	font-size: 18px;
+	line-height: 1.6;
+	margin-bottom: 20px;
+	text-align: left;
+      }
+      
+      .book-appointment-cta {
+	background-color: var(--vista-blue);
+	padding: 60px 0;
+	color: var(--antiflash-white);
+      }
+      
+      .book-appointment-cta h2 {
+	font-size: 28px;
+	margin-bottom: 20px;
+      }
+      
+      .book-appointment-cta p {
+	font-size: 18px;
+	line-height: 1.6;
+      }
+      
+      .book-appointment-cta a {
+	color: var(--antiflash-white);
+	text-decoration: underline;
+      }
