@@ -8,7 +8,7 @@ function LandingPageSection({ image, width = '100%', height = 'auto' }) {
       <div className="section-content">
         <h2>Empowering You with Your Health Data</h2>
         <p>
-          Opal is your trusted companion in managing your health information. With our secure and intuitive platform, you can easily access,
+          opal is your trusted companion in managing your health information. With our secure and intuitive platform, you can easily access,
           organize, and share your medical records, ensuring that you have control over your health journey.
         </p>
         <div className="feature-grid">

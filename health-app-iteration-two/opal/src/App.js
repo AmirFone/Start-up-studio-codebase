@@ -50,7 +50,7 @@ function App() {
     e.preventDefault();
     
     // Construct the mailto URL with the form data
-    const mailtoURL = `mailto:ah2324@cornell.edu?subject= I have a question about Opal!&body=First Name: ${formData.firstName}%0D%0ALast Name: ${formData.lastName}%0D%0AEmail: ${formData.email}%0D%0AMessage: ${formData.message}`;
+    const mailtoURL = `mailto:ah2324@cornell.edu?subject= I have a question about opal!&body=First Name: ${formData.firstName}%0D%0ALast Name: ${formData.lastName}%0D%0AEmail: ${formData.email}%0D%0AMessage: ${formData.message}`;
   
     // Open the mailto URL in a new window or tab
     window.open(mailtoURL, '_blank');
@@ -69,7 +69,7 @@ function App() {
       <div className="App">
       <header>
         <nav>
-          <span><Link to="/" style={{ textDecoration: 'none' }}>OPAL</Link></span>
+          <span><Link to="/" style={{ textDecoration: 'none' }}>opal</Link></span>
           <ul>
             <li><Link to="/signup" className="nav-link">Sign up</Link></li>
             <li><Link to="/about-us" className="nav-link">About Us</Link></li>

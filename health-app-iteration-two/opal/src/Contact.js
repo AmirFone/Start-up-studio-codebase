@@ -50,7 +50,7 @@ function Contact() {
   return (
     <div className="Contact">
       <div className="card implementation-plan">
-        <h2>Opal Backend Implementation Plan</h2>
+        <h2>opal Backend Implementation Plan</h2>
         <div className="steps">
           {displayedSteps.includes(0) && (
             <div className="step">
