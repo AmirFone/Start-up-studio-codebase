@@ -74,10 +74,17 @@ function App() {
       <div className="App">
       <header>
         <nav>
-          <div className="brand-container">
-            <span><Link to="/" style={{ textDecoration: 'none' }}>opal</Link></span>
-            <span className="tagline">is the digital wallet for your health</span>
-          </div>
+        <div className="brand-container">
+          <Link to="/" className="logo-link">
+            <span className="logo-text">
+              <span className="letter-o">o</span>
+              <span className="letter-p">p</span>
+              <span className="letter-a">a</span>
+              <span className="letter-l">l</span>
+            </span>
+          </Link>
+          <span className="tagline">is the digital wallet for your health</span>
+    </div>
           <ul>
             <li><Link to="/signup" className="nav-link">Sign up</Link></li>
             <li><Link to="/signin" className="nav-link">Sign in</Link></li>

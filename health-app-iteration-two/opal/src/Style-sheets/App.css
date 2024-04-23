@@ -475,5 +475,32 @@ footer {
   animation: fadeIn 1s ease-out;
 }
 
+.logo-link {
+  text-decoration: none;
+}
+
+.logo-text {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 32px;
+  font-weight: bold;
+  letter-spacing: -1px;
+}
+
+.letter-o {
+  color: #403f86;
+}
+
+.letter-p {
+  color: var(--rich-black);
+}
+
+.letter-a {
+  color: var(--rich-black);
+}
+
+.letter-l {
+  color: var(--rich-black);
+}
+
 
       
