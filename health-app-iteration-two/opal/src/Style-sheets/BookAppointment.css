@@ -99,3 +99,11 @@
 	color: var(--antiflash-white);
 	text-decoration: underline;
       }
+      /* BookAppointment.css */
+button[type='submit'] {
+	transition: background-color 0.3s ease;
+      }
+      
+      button[type='submit']:hover {
+	background-color: var(--vista-blue);
+      }

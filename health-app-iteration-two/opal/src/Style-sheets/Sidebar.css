@@ -53,3 +53,16 @@
 	font-size:10;
       }
       
+      /* Sidebar.css */
+.sidebar nav a {
+	transition: background-color 0.3s ease;
+      }
+      
+      .sidebar nav a:hover {
+	background-color: var(--periwinkle);
+      }
+      
+      .sidebar nav a.active {
+	background-color: var(--tropical-indigo);
+	color: var(--antiflash-white);
+      }

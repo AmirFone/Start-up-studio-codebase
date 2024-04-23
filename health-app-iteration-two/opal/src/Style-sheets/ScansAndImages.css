@@ -102,3 +102,12 @@
       .download-button svg {
 	margin-right: 5px;
       }
+
+      /* ScansAndImages.css */
+.image-card {
+	transition: transform 0.3s ease;
+      }
+      
+      .image-card:hover {
+	transform: scale(1.05);
+      }
